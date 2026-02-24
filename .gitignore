@@ -24,3 +24,10 @@ hs_err_pid*
 # IntelliJ
 /.idea/
 *.iml
+
+# Large files
+*.xml
+*.xml.gz
+*.tif
+*.osm
+*.osm.pbf

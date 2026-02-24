@@ -26,8 +26,12 @@ hs_err_pid*
 *.iml
 
 # Large files
-*.xml
-*.xml.gz
-*.tif
-*.osm
-*.osm.pbf
+#*.xml
+#*.xml.gz
+#*.tif
+#*.osm
+#*.osm.pbf
+
+# Repo with input big files and final network
+/inputs_network
+/outputs_network/*.xml

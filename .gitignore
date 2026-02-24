@@ -31,3 +31,7 @@ hs_err_pid*
 *.tif
 *.osm
 *.osm.pbf
+
+# Repo with input big files and final network
+/inputs_network
+/outputs_network/*.xml

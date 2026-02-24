@@ -109,9 +109,6 @@ public class ElevationDataParser {
         }
 
         double[] pixel = new double[1];
-        System.out.println(pixel);
-        System.out.println(posGrid.x);
-        System.out.println(posGrid.y);
         double[] data = gridData.getPixel(posGrid.x, posGrid.y, pixel);
         return data[0];
     }

@@ -71,7 +71,9 @@ public class ElevationDataParser {
 
 
     public ElevationDataParser(String tiffFile, String scenarioCRS) {
-        this.ct = TransformationFactory.getCoordinateTransformation(scenarioCRS, scenarioCRS);
+        var tiffCRS = "EPSG:31370"; // Belgian Lambert 72, which is the same as the scenarioCRS in our case
+        
+        this.ct = TransformationFactory.getCoordinateTransformation(scenarioCRS, tiffCRS);
 
         GeoTiffReader reader = null;
         try {

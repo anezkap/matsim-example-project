@@ -28,9 +28,8 @@ public class CreateBicycleNetworkWithElevation {
         var network = new OsmBicycleReader.Builder()
                 .setCoordinateTransformation(transformation)
                 .setAfterLinkCreated((link, tags, direction) -> {
-                    // Pass the transformation into the method so we can ensure the coord is in Lambert 72
-                    addElevationIfNecessary(link.getFromNode(), elevationParser, transformation);
-                    addElevationIfNecessary(link.getToNode(), elevationParser, transformation);
+                    addElevationIfNecessary(link.getFromNode(), elevationParser);
+                    addElevationIfNecessary(link.getToNode(), elevationParser);
                 })
                 .build()
                 .read(inputOsmFile);
@@ -40,14 +39,10 @@ public class CreateBicycleNetworkWithElevation {
         new NetworkWriter(network).write(outputFile);
     }
 
-    private static synchronized void addElevationIfNecessary(Node node, ElevationDataParser elevationParser, CoordinateTransformation transformation) {
+    private static synchronized void addElevationIfNecessary(Node node, ElevationDataParser elevationParser) {
         Coord coord = node.getCoord();
 
-        if (coord.getX() < 1000) {
-            coord = transformation.transform(coord);
-        }
-
-        // Inside your lambda or addElevation method
+        // Add the elevation to all coordinates and set it to 0.0 if it's outside the TIFF bounds or if the elevation is NaN.
         try {
             // Only call getElevation if we are reasonably sure it's inside the TIFF bounds
             double elevation = elevationParser.getElevation(coord);
@@ -55,6 +50,9 @@ public class CreateBicycleNetworkWithElevation {
             // Set elevation only if it's a valid number
             if (!Double.isNaN(elevation)) {
                 node.setCoord(CoordUtils.createCoord(coord.getX(), coord.getY(), elevation));
+            }
+            else {
+                node.setCoord(CoordUtils.createCoord(coord.getX(), coord.getY(), 0.0));
             }
         } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
             // If the node is outside the TIFF (e.g. index -31985),

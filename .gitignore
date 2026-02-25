@@ -35,3 +35,5 @@ hs_err_pid*
 # Repo with input big files and final network
 /inputs_network
 /outputs_network/*.xml
+
+.DS_Store

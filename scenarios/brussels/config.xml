@@ -36,6 +36,11 @@
 		</parameterset>
 	</module>
 
+	<module name="qsim" >
+		<param name="mainMode" value="car,bike" />
+		<param name="linkDynamics" value="PassingQ" />
+	</module>
+
 	<module name="scoring">
 		<param name="lateArrival" value="-18" />
 		<param name="performing" value="+6" />

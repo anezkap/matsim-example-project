@@ -24,6 +24,8 @@ import org.matsim.core.population.io.StreamingPopulationReader;
 import org.matsim.core.population.io.StreamingPopulationWriter;
 import org.matsim.core.scenario.ScenarioUtils;
 
+import java.nio.file.Path;
+
 /**
  * @author kn
  * @author jlaudan
@@ -40,18 +42,18 @@ class RunPopulationDownsamplingExample {
 
     public static void main(final String[] args) {
 
-        String outputPopFilename = "";
-        String inputPopFilename = "";
+        String inputPopFilename = "src/main/java/org/matsim/population/input/population.xml.gz";
+        String outputPopFilename = "src/main/java/org/matsim/population/output/population_1percent_sample.xml.gz";
 
-        if ( args!=null ) {
-            if (args.length != 2) {
-                System.err.println("Usage: cmd inputPop.xml.gz outputPop.xml.gz");
-                System.exit(401);
-            } else {
-                inputPopFilename = args[0] ;
-                outputPopFilename = args[1] ;
-            }
-        }
+//        if ( args!=null ) {
+//            if (args.length != 2) {
+//                System.err.println("Usage: cmd inputPop.xml.gz outputPop.xml.gz");
+//                System.exit(401);
+//            } else {
+//                inputPopFilename = args[0] ;
+//                outputPopFilename = args[1] ;
+//            }
+//        }
 
         RunPopulationDownsamplingExample app = new RunPopulationDownsamplingExample(inputPopFilename, outputPopFilename);
         app.run();

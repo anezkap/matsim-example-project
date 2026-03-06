@@ -12,7 +12,7 @@
 	</module>
 
 	<module name="plans">
-		<param name="inputPlansFile" value="plans10.xml" />
+		<param name="inputPlansFile" value="population.xml" />
 	</module>
 
 	<module name="controller">
@@ -39,6 +39,9 @@
 	<module name="qsim" >
 		<param name="mainMode" value="car,bike" />
 		<param name="linkDynamics" value="PassingQ" />
+<!--		Use 1% sample-->
+		<param name="flowCapacityFactor" value="0.01" />
+		<param name="storageCapacityFactor" value="0.01" />
 	</module>
 
 	<module name="scoring">

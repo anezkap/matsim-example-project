@@ -62,7 +62,7 @@ public class RunBicycleExample {
             config.addModule(new BicycleConfigGroup());
             fillConfigWithBicycleStandardValues(config);
 
-            config.network().setInputFile("output_network/network_with_cars_bikes_elevations.xml.gz");
+            config.network().setInputFile("outputs_network/network_with_cars_bikes_elevations.xml.gz");
             config.plans().setInputFile("scenarios/brussels/population_testing.xml");
         } else {
             throw new RuntimeException("More than one argument was provided. There is no procedure for this situation. Thus aborting!"

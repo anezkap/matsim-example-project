@@ -113,6 +113,7 @@
 			<attribute name="brussels_resident" class="java.lang.Boolean">true</attribute>
 			<attribute name="education" class="java.lang.String">Higher educated</attribute>
 			<attribute name="has_car" class="java.lang.Boolean">true</attribute>
+			<attribute name="carAvail" class="java.lang.String">always</attribute>
 			<attribute name="median_income" class="java.lang.Double">28501.0</attribute>
 			<attribute name="sex" class="java.lang.String">F</attribute>
 		</attributes>
@@ -139,6 +140,7 @@
 			<attribute name="brussels_resident" class="java.lang.Boolean">true</attribute>
 			<attribute name="education" class="java.lang.String">Lower educated</attribute>
 			<attribute name="has_car" class="java.lang.Boolean">true</attribute>
+			<attribute name="carAvail" class="java.lang.String">always</attribute>
 			<attribute name="median_income" class="java.lang.Double">25632.0</attribute>
 			<attribute name="sex" class="java.lang.String">M</attribute>
 		</attributes>
@@ -165,6 +167,7 @@
 			<attribute name="brussels_resident" class="java.lang.Boolean">true</attribute>
 			<attribute name="education" class="java.lang.String">Lower educated</attribute>
 			<attribute name="has_car" class="java.lang.Boolean">false</attribute>
+			<attribute name="carAvail" class="java.lang.String">never</attribute>
 			<attribute name="median_income" class="java.lang.Double">20312.0</attribute>
 			<attribute name="sex" class="java.lang.String">F</attribute>
 		</attributes>
@@ -190,6 +193,7 @@
 			<attribute name="brussels_resident" class="java.lang.Boolean">true</attribute>
 			<attribute name="education" class="java.lang.String">Lower educated</attribute>
 			<attribute name="has_car" class="java.lang.Boolean">false</attribute>
+			<attribute name="carAvail" class="java.lang.String">never</attribute>
 			<attribute name="median_income" class="java.lang.Double">24960.0</attribute>
 			<attribute name="sex" class="java.lang.String">F</attribute>
 		</attributes>

@@ -19,6 +19,8 @@
 package org.matsim.project;
 
 import org.matsim.api.core.v01.Scenario;
+import org.matsim.contrib.bicycle.BicycleConfigGroup;
+import org.matsim.contrib.bicycle.BicycleModule;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.ConfigUtils;
 import org.matsim.core.controler.Controler;
@@ -44,7 +46,11 @@ public class RunMatsim{
 
 		// possibly modify config here
 
-		// ---
+		config.routing().setRoutingRandomness(3.);
+
+		BicycleConfigGroup bicycleConfigGroup = ConfigUtils.addOrGetModule( config, BicycleConfigGroup.class );
+
+		final String bicycle = bicycleConfigGroup.getBicycleMode();
 		
 		Scenario scenario = ScenarioUtils.loadScenario(config) ;
 
@@ -55,6 +61,8 @@ public class RunMatsim{
 		Controler controler = new Controler( scenario ) ;
 		
 		// possibly modify controler here
+
+		controler.addOverridingModule(new BicycleModule() );
 
 //		controler.addOverridingModule( new OTFVisLiveModule() ) ;
 

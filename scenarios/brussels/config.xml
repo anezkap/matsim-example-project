@@ -24,6 +24,7 @@
 	<module name="changeMode" >
 		<!-- Defines all the modes available, including chain-based modes, seperated by commas -->
 		<param name="modes" value="car,bike" />
+		<param name="ignoreCarAvailability" value="false" />
 	</module>
 
 	<module name="routing" >
@@ -81,6 +82,25 @@
 			<param name="strategyName" value="ChangeTripMode" />
 			<param name="weight" value="0.5" />
 		</parameterset>
+	</module>
+
+	<module name="bicycle" >
+		<param name="bicycleMode" value="bike" />
+		<!-- marginalUtilityOfSurfacetype -->
+		<param name="marginalUtilityOfComfort_m" value="-2.0E-4" />
+		<!-- marginalUtilityOfGradient -->
+		<param name="marginalUtilityOfGradient_m_100m" value="-000.02" />
+		<!-- marginalUtilityOfStreettype -->
+		<param name="marginalUtilityOfInfrastructure_m" value="-2.0E-4" />
+		<!-- marginalUtilityOfUserDefinedNetworkAttribute -->
+		<param name="marginalUtilityOfUserDefinedNetworkAttribute_m" value="-0.0" />
+		<!-- maxBicycleSpeed -->
+		<param name="maxBicycleSpeedForRouting" value="4.16666666" />
+		<param name="motorizedInteraction" value="false" />
+		<!-- userDefinedNetworkAttributeDefaultValue -->
+		<param name="userDefinedNetworkAttributeDefaultValue" value="0.1" />
+		<!-- userDefinedNetworkAttributeName -->
+		<param name="userDefinedNetworkAttributeName" value="quietness" />
 	</module>
 
 </config>

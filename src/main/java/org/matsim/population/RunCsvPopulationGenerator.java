@@ -71,9 +71,9 @@ public class RunCsvPopulationGenerator {
                         parseDouble(getRequired(c, idx, "work_y"))
                 );
 
-                // ---- times: minutes since midnight -> seconds ----
-                double depWork_s = parseMinutesSinceMidnightToSeconds(getRequired(c, idx, "departure_time_home"));
-                double depHome_s = parseMinutesSinceMidnightToSeconds(getRequired(c, idx, "departure_time_work"));
+                // ---- times: in seconds since midnight already  ----
+                double depWork_s = parseSecondsSinceMidnight(getRequired(c, idx, "departure_time_home"));
+                double depHome_s = parseSecondsSinceMidnight(getRequired(c, idx, "departure_time_work"));
 
                 // ---- mode (car/bike/walk/public transport) ----
                 String mode = normalizeMode(getRequired(c, idx, "matsim_mode"));
@@ -104,8 +104,8 @@ public class RunCsvPopulationGenerator {
 
     // -------- helpers --------
 
-    private static double parseMinutesSinceMidnightToSeconds(String raw) {
-        return Double.parseDouble(raw.trim()) * 60.0;
+    private static double parseSecondsSinceMidnight(String raw) {
+        return Double.parseDouble(raw.trim());
     }
 
     private static String normalizeMode(String raw) {

@@ -52,6 +52,10 @@ public class CreateBicycleNetworkWithElevation {
             // Only call getElevation if we are reasonably sure it's inside the TIFF bounds
             double elevation = elevationParser.getElevation(coord);
 
+            if (elevation < -500) {  // used -999 for null values
+                elevation = 0;
+            }
+
             // Set elevation only if it's a valid number
             if (!Double.isNaN(elevation)) {
                 node.setCoord(CoordUtils.createCoord(coord.getX(), coord.getY(), elevation));

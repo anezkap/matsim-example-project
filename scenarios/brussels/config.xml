@@ -12,12 +12,13 @@
 	</module>
 
 	<module name="plans">
-		<param name="inputPlansFile" value="population.xml.gz" />
+		<param name="inputPlansFile" value="population_testing.xml" />
+<!--		<param name="inputPlansFile" value="population_1percent_sample.xml.gz" />-->
 	</module>
 
 	<module name="controller">
 		<param name="outputDirectory" value="output" />
-		<param name="lastIteration" value="10" />
+		<param name="lastIteration" value="5" />
 	</module>
 
 	<module name="changeMode" >
@@ -26,6 +27,7 @@
 	</module>
 
 	<module name="routing" >
+		<param name="accessEgressType" value="accessEgressModeToLink" />
 		<param name="networkModes" value="car,bike" />
 		<param name="clearDefaultTeleportedModeParams" value="true" />
 		<parameterset type="teleportedModeParameters" >
@@ -34,12 +36,19 @@
 			<param name="teleportedModeFreespeedFactor" value="null" />
 			<param name="teleportedModeSpeed" value="0.8333333333333333" />
 		</parameterset>
+		<parameterset type="teleportedModeParameters" >
+			<param name="beelineDistanceFactor" value="1.3" />
+			<param name="mode" value="pt" />
+			<param name="teleportedModeFreespeedFactor" value="2.0" />
+			<param name="teleportedModeSpeed" value="null" />
+		</parameterset>
 	</module>
 
 	<module name="qsim" >
 		<param name="mainMode" value="car,bike" />
 		<param name="linkDynamics" value="PassingQ" />
-<!--		Use 1% sample-->
+		<param name="usePersonIdForMissingVehicleId" value="false" />
+		<!--		Use 1% sample-->
 		<param name="flowCapacityFactor" value="0.01" />
 		<param name="storageCapacityFactor" value="0.01" />
 	</module>
@@ -48,11 +57,11 @@
 		<param name="lateArrival" value="-18" />
 		<param name="performing" value="+6" />
 		<parameterset type="activityParams" >
-			<param name="activityType"            value="h" />
+			<param name="activityType"            value="home" />
 			<param name="typicalDuration" value="12:00:00" />
 		</parameterset>
 		<parameterset type="activityParams" >
-			<param name="activityType"            value="w" />
+			<param name="activityType"            value="work" />
 			<param name="typicalDuration" value="08:00:00" />
 			<param name="openingTime"     value="07:00:00" />
 			<param name="closingTime"     value="18:00:00" />

@@ -18,14 +18,26 @@
  * *********************************************************************** */
 package org.matsim.project;
 
+import com.google.inject.Inject;
+import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.Scenario;
+import org.matsim.api.core.v01.TransportMode;
+import org.matsim.api.core.v01.network.Link;
+import org.matsim.contrib.bicycle.AdditionalBicycleLinkScore;
+import org.matsim.contrib.bicycle.AdditionalBicycleLinkScoreDefaultImpl;
 import org.matsim.contrib.bicycle.BicycleConfigGroup;
 import org.matsim.contrib.bicycle.BicycleModule;
+import org.matsim.contrib.bicycle.run.RunBicycleExample;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.ConfigUtils;
+import org.matsim.core.config.groups.QSimConfigGroup;
+import org.matsim.core.controler.AbstractModule;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy.OverwriteFileSetting;
 import org.matsim.core.scenario.ScenarioUtils;
+import org.matsim.vehicles.VehicleType;
+import org.matsim.vehicles.VehicleUtils;
+import org.matsim.vehicles.VehiclesFactory;
 
 /**
  * @author nagel
@@ -48,6 +60,8 @@ public class RunMatsim{
 
 		config.routing().setRoutingRandomness(3.);
 
+		config.qsim().setPcuThresholdForFlowCapacityEasing(0.5);
+
 		BicycleConfigGroup bicycleConfigGroup = ConfigUtils.addOrGetModule( config, BicycleConfigGroup.class );
 
 		final String bicycle = bicycleConfigGroup.getBicycleMode();
@@ -55,14 +69,26 @@ public class RunMatsim{
 		Scenario scenario = ScenarioUtils.loadScenario(config) ;
 
 		// possibly modify scenario here
-		
-		// ---
-		
+
+		// set config such that the mode vehicles come from vehicles data:
+		scenario.getConfig().qsim().setVehiclesSource(QSimConfigGroup.VehiclesSource.modeVehicleTypesFromVehiclesData);
+
+		// now put the mode vehicles into the vehicles data:
+		final VehiclesFactory vf = VehicleUtils.getFactory();
+		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create(TransportMode.car, VehicleType.class ) ) );
+		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create("bike", VehicleType.class ) ).setMaximumVelocity(4.16666666 ).setPcuEquivalents(0.05 ).setLength(1.5) );
+
 		Controler controler = new Controler( scenario ) ;
 		
 		// possibly modify controler here
 
 		controler.addOverridingModule(new BicycleModule() );
+//		controler.addOverridingModule( new AbstractModule(){
+//			@Override public void install(){
+//				this.bind( AdditionalBicycleLinkScoreDefaultImpl.class ); // so it can be used as delegate
+//				this.bind( AdditionalBicycleLinkScore.class ).to( MyAdditionalBicycleLinkScore.class );
+//			}
+//		} );
 
 //		controler.addOverridingModule( new OTFVisLiveModule() ) ;
 
@@ -72,5 +98,20 @@ public class RunMatsim{
 		
 		controler.run();
 	}
-	
+
+	private static class MyAdditionalBicycleLinkScore implements AdditionalBicycleLinkScore {
+
+		@Inject
+		private AdditionalBicycleLinkScoreDefaultImpl delegate;
+
+		@Override public double computeLinkBasedScore( Link link ){
+//			double result = (double) link.getAttributes().getAttribute( "allowed_speed" );  // TODO: just testing something, use actual attribute
+
+			double amount = delegate.computeLinkBasedScore( link );
+
+//			return amount + result ;  // or some other way to augment the score
+			return amount;
+
+		}
+	}
 }

@@ -15,7 +15,7 @@ import java.util.Set;
 public class CreateBicycleNetworkWithElevation {
 
     private static final String outputCRS = "EPSG:31370"; // Belgian Lambert 72
-    private static final String inputOsmFile = "inputs_network/allroads_brussels.osm.pbf";
+    private static final String inputOsmFile = "inputs_network/merged-network_pbf.osm.pbf";
     private static final String inputTiffFile = "inputs_network/terrain.tif";
     private static final String outputFile = "outputs_network/network_with_cars_bikes_elevations.xml.gz";
 

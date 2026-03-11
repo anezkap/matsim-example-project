@@ -1,0 +1,24 @@
+2026-03-11T20:30:17,093  WARN RandomizingTimeDistanceTravelDisutilityFactory:113 There will be no routing randomness. The randomization of the travel disutility requires the monetary distance rate to be different than zero. Continuing anyway.
+2026-03-11T20:30:17,093  WARN RandomizingTimeDistanceTravelDisutilityFactory:118 There will be no routing randomness. The randomization of the travel disutility requires the travel time cost rate to be different than zero. Continuing anyway.
+2026-03-11T20:30:21,959  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.055265688370324674 to 0.05636275688066879
+2026-03-11T20:30:21,959  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.021260402248514897 to 0.024055471167980572
+2026-03-11T20:30:21,962  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.032340405505669405 to 0.03488078444961741
+2026-03-11T20:30:21,962  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.032340405505669405 to 0.03488078444961741
+2026-03-11T20:30:21,965  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04185172861700369 to 0.04405851447951032
+2026-03-11T20:30:21,965  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04185172861700369 to 0.04405851447951032
+2026-03-11T20:30:21,966  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.03515452820445508 to 0.03763903611743116
+2026-03-11T20:30:21,967  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.034403956386880194 to 0.03690700770535922
+2026-03-11T20:30:21,967  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.06394778663312707 to 0.06397936309809217
+2026-03-11T20:30:21,967  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.05918980029294009 to 0.0598366413742482
+2026-03-11T20:30:21,967  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04088729523084043 to 0.04314615409885905
+2026-03-11T20:30:24,274  WARN CoordUtils$EucledianDistanceCalculator:432 Mixed use of elevation in coordinates: [x=152721.889 | y=172843.619 | z=0.0]; [x=150844.17944 | y=163502.64919997938]
+2026-03-11T20:30:24,274  WARN CoordUtils$EucledianDistanceCalculator:434 Returning projected coordinate distance (using x and y components only)
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:432 Mixed use of elevation in coordinates: [x=146881.87944 | y=174443.8791999789 | z=0.0]; [x=145643.306 | y=168483.977]
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:434 Returning projected coordinate distance (using x and y components only)
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:432 Mixed use of elevation in coordinates: [x=152573.7 | y=173736.769 | z=0.0]; [x=153448.279276 | y=174777.4751059804]
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:434 Returning projected coordinate distance (using x and y components only)
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:432 Mixed use of elevation in coordinates: [x=153448.279276 | y=174777.4751059804 | z=0.0]; [x=152573.7 | y=173736.769]
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:434 Returning projected coordinate distance (using x and y components only)
+2026-03-11T20:30:26,267  WARN ExpBetaPlanChanger:102 Would make sense to revise this once more.  See comments in code.  kai, nov08
+2026-03-11T20:30:26,301  WARN CoordUtils:393 Mix of 2D / 3D coordinates. Assuming 2D only.
+ This message given only once.

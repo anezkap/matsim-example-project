@@ -1,0 +1,463 @@
+2026-03-11T20:30:14,058  INFO Gbl:64 JVM: 25.0.1; Homebrew; mixed mode, sharing; 64-bit
+2026-03-11T20:30:14,059  INFO Gbl:68 OS: Mac OS X; 15.6.1; aarch64
+2026-03-11T20:30:14,059  INFO Gbl:71 CPU cores: 8
+2026-03-11T20:30:14,060  INFO Gbl:72 max. Memory: 4096.0MB (4294967296B)
+2026-03-11T20:30:14,061  INFO Gbl:114 MATSim-Build: r7f2ea0d07d20e164b577066595eddc23e3659473 ({2025-04-11 08:55:36})
+2026-03-11T20:30:14,061  INFO Gbl:76 Command: org.matsim.project.RunMatsim
+2026-03-11T20:30:14,063  INFO MemoryObserver:42 used RAM: 941 MB  free: 934 MB  total: 1876 MB
+2026-03-11T20:30:14,064  INFO ControlerListenerManagerImpl:112 calling notifyStartup on org.matsim.core.controler.ControlerDefaultsModule$1 with priority 0.0
+2026-03-11T20:30:14,120  INFO ControlerListenerManagerImpl:112 calling notifyStartup on org.matsim.guice.DependencyGraphControlerListener with priority 0.0
+2026-03-11T20:30:14,180  INFO ControlerListenerManagerImpl:112 calling notifyStartup on org.matsim.counts.CountsControlerListener with priority 0.0
+2026-03-11T20:30:14,180  INFO ControlerListenerManagerImpl:112 calling notifyStartup on org.matsim.analysis.ModeChoiceCoverageControlerListener with priority 0.0
+2026-03-11T20:30:14,180  INFO ControlerListenerManagerImpl:112 calling notifyStartup on org.matsim.analysis.ModeStatsControlerListener with priority 0.0
+2026-03-11T20:30:14,180  INFO ControlerListenerManagerImpl:112 calling notifyStartup on org.matsim.analysis.ScoreStatsControlerListener with priority 0.0
+2026-03-11T20:30:14,181  INFO ControlerListenerManagerImpl:112 calling notifyStartup on org.matsim.contrib.bicycle.BicycleModule$ConsistencyCheck with priority 0.0
+2026-03-11T20:30:14,181  INFO ControlerListenerManagerImpl:115 all ControlerStartupListeners called.
+2026-03-11T20:30:14,181  INFO ControllerUtils:99 config dump before iterations start
+2026-03-11T20:30:14,194  INFO ControllerUtils:105 === logging config.xml skipped ===
+2026-03-11T20:30:14,194  INFO ControllerUtils:106 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:14,194  INFO ControllerUtils:110 Complete config dump done.
+2026-03-11T20:30:14,194  INFO ControllerUtils:111 Checking consistency of config...
+2026-03-11T20:30:14,194  INFO VspConfigConsistencyCheckerImpl:62 NOT running vsp config consistency check because vsp defaults checking level is set to IGNORE
+2026-03-11T20:30:14,196  INFO ControllerUtils:113 Checking consistency of config done.
+2026-03-11T20:30:14,196  INFO PrepareForSimImpl:125 Network seems to be multimodal. Create car-only network which is handed over to PersonPrepareForSim.
+2026-03-11T20:30:14,197  INFO NetworkImpl:165  node # 1
+2026-03-11T20:30:14,197  INFO NetworkImpl:165  node # 4
+2026-03-11T20:30:14,197  INFO NetworkImpl:165  node # 16
+2026-03-11T20:30:14,198  INFO NetworkImpl:165  node # 64
+2026-03-11T20:30:14,198  INFO NetworkImpl:165  node # 256
+2026-03-11T20:30:14,199  INFO NetworkImpl:165  node # 1024
+2026-03-11T20:30:14,200  INFO NetworkImpl:165  node # 4096
+2026-03-11T20:30:14,203  INFO NetworkImpl:165  node # 16384
+2026-03-11T20:30:14,214  INFO NetworkImpl:165  node # 65536
+2026-03-11T20:30:14,233  INFO NetworkImpl:161  link # 1
+2026-03-11T20:30:14,234  INFO NetworkImpl:161  link # 4
+2026-03-11T20:30:14,234  INFO NetworkImpl:161  link # 16
+2026-03-11T20:30:14,235  INFO NetworkImpl:161  link # 64
+2026-03-11T20:30:14,239  INFO NetworkImpl:161  link # 256
+2026-03-11T20:30:14,244  INFO NetworkImpl:161  link # 1024
+2026-03-11T20:30:14,256  INFO NetworkImpl:161  link # 4096
+2026-03-11T20:30:14,319  INFO NetworkImpl:161  link # 16384
+2026-03-11T20:30:14,460  INFO NetworkImpl:161  link # 65536
+2026-03-11T20:30:14,671  INFO Counter:70 [VehiclesImpl] added vehicle # 1
+2026-03-11T20:30:14,672  INFO Counter:70 [VehiclesImpl] added vehicle # 2
+2026-03-11T20:30:14,672  INFO Counter:70 [VehiclesImpl] added vehicle # 4
+2026-03-11T20:30:14,672  INFO Counter:70 [VehiclesImpl] added vehicle # 8
+2026-03-11T20:30:14,865  INFO SpeedyALTData:51 find dead ends...
+2026-03-11T20:30:14,892  INFO SpeedyALTData:132 calculate landmarks...
+2026-03-11T20:30:16,311  INFO SpeedyALTData:173 calculate min travelcost...
+2026-03-11T20:30:16,326  INFO NetworkImpl:165  node # 1
+2026-03-11T20:30:16,326  INFO NetworkImpl:165  node # 4
+2026-03-11T20:30:16,326  INFO NetworkImpl:165  node # 16
+2026-03-11T20:30:16,326  INFO NetworkImpl:165  node # 64
+2026-03-11T20:30:16,327  INFO NetworkImpl:165  node # 256
+2026-03-11T20:30:16,327  INFO NetworkImpl:165  node # 1024
+2026-03-11T20:30:16,327  INFO NetworkImpl:165  node # 4096
+2026-03-11T20:30:16,327  INFO NetworkImpl:165  node # 16384
+2026-03-11T20:30:16,331  INFO NetworkImpl:165  node # 65536
+2026-03-11T20:30:16,342  INFO NetworkImpl:161  link # 1
+2026-03-11T20:30:16,342  INFO NetworkImpl:161  link # 4
+2026-03-11T20:30:16,342  INFO NetworkImpl:161  link # 16
+2026-03-11T20:30:16,342  INFO NetworkImpl:161  link # 64
+2026-03-11T20:30:16,343  INFO NetworkImpl:161  link # 256
+2026-03-11T20:30:16,346  INFO NetworkImpl:161  link # 1024
+2026-03-11T20:30:16,353  INFO NetworkImpl:161  link # 4096
+2026-03-11T20:30:16,380  INFO NetworkImpl:161  link # 16384
+2026-03-11T20:30:16,462  INFO NetworkImpl:161  link # 65536
+2026-03-11T20:30:16,721  INFO NetworkRoutingProvider:151 Checking network for mode 'car' for consistency...
+2026-03-11T20:30:16,782  INFO MultimodalNetworkCleaner:104 running org.matsim.core.network.algorithms.MultimodalNetworkCleaner algorithm for modes [car] with connectivity modes []...
+2026-03-11T20:30:16,784  INFO MultimodalNetworkCleaner:108   checking 107097 nodes and 169844 links for dead-ends...
+2026-03-11T20:30:16,998  INFO MultimodalNetworkCleaner:126     The biggest cluster consists of 169844 links.
+2026-03-11T20:30:16,998  INFO MultimodalNetworkCleaner:127   done.
+2026-03-11T20:30:17,051  INFO MultimodalNetworkCleaner:151   resulting network contains 107097 nodes and 169844 links.
+2026-03-11T20:30:17,052  INFO MultimodalNetworkCleaner:153 done.
+2026-03-11T20:30:17,093  WARN RandomizingTimeDistanceTravelDisutilityFactory:113 There will be no routing randomness. The randomization of the travel disutility requires the monetary distance rate to be different than zero. Continuing anyway.
+2026-03-11T20:30:17,093  WARN RandomizingTimeDistanceTravelDisutilityFactory:118 There will be no routing randomness. The randomization of the travel disutility requires the travel time cost rate to be different than zero. Continuing anyway.
+2026-03-11T20:30:17,096  INFO RandomizingTimeDistanceTravelDisutilityFactory:86  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:17,226  INFO SpeedyALTData:51 find dead ends...
+2026-03-11T20:30:17,248  INFO SpeedyALTData:132 calculate landmarks...
+2026-03-11T20:30:17,850  INFO SpeedyALTData:173 calculate min travelcost...
+2026-03-11T20:30:17,859  INFO NetworkImpl:165  node # 1
+2026-03-11T20:30:17,859  INFO NetworkImpl:165  node # 4
+2026-03-11T20:30:17,859  INFO NetworkImpl:165  node # 16
+2026-03-11T20:30:17,859  INFO NetworkImpl:165  node # 64
+2026-03-11T20:30:17,860  INFO NetworkImpl:165  node # 256
+2026-03-11T20:30:17,860  INFO NetworkImpl:165  node # 1024
+2026-03-11T20:30:17,861  INFO NetworkImpl:165  node # 4096
+2026-03-11T20:30:17,861  INFO NetworkImpl:165  node # 16384
+2026-03-11T20:30:17,864  INFO NetworkImpl:165  node # 65536
+2026-03-11T20:30:17,874  INFO NetworkImpl:161  link # 1
+2026-03-11T20:30:17,874  INFO NetworkImpl:161  link # 4
+2026-03-11T20:30:17,875  INFO NetworkImpl:161  link # 16
+2026-03-11T20:30:17,875  INFO NetworkImpl:161  link # 64
+2026-03-11T20:30:17,875  INFO NetworkImpl:161  link # 256
+2026-03-11T20:30:17,875  INFO NetworkImpl:161  link # 1024
+2026-03-11T20:30:17,877  INFO NetworkImpl:161  link # 4096
+2026-03-11T20:30:17,887  INFO NetworkImpl:161  link # 16384
+2026-03-11T20:30:17,921  INFO NetworkImpl:161  link # 65536
+2026-03-11T20:30:18,145  INFO NetworkImpl:161  link # 262144
+2026-03-11T20:30:18,303  INFO NetworkRoutingProvider:151 Checking network for mode 'bike' for consistency...
+2026-03-11T20:30:18,367  INFO MultimodalNetworkCleaner:104 running org.matsim.core.network.algorithms.MultimodalNetworkCleaner algorithm for modes [bike] with connectivity modes []...
+2026-03-11T20:30:18,367  INFO MultimodalNetworkCleaner:108   checking 187101 nodes and 451987 links for dead-ends...
+2026-03-11T20:30:18,930  INFO MultimodalNetworkCleaner:126     The biggest cluster consists of 451987 links.
+2026-03-11T20:30:18,930  INFO MultimodalNetworkCleaner:127   done.
+2026-03-11T20:30:19,026  INFO MultimodalNetworkCleaner:151   resulting network contains 187101 nodes and 451987 links.
+2026-03-11T20:30:19,026  INFO MultimodalNetworkCleaner:153 done.
+2026-03-11T20:30:19,069  INFO BicycleTravelDisutilityFactory:61  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:19,248  INFO SpeedyALTData:51 find dead ends...
+2026-03-11T20:30:19,261  INFO SpeedyALTData:132 calculate landmarks...
+2026-03-11T20:30:20,875  INFO SpeedyALTData:173 calculate min travelcost...
+2026-03-11T20:30:20,928  INFO RandomizingTimeDistanceTravelDisutilityFactory:86  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:20,931  INFO BicycleTravelDisutilityFactory:61  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:20,948  INFO RandomizingTimeDistanceTravelDisutilityFactory:86  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:20,952  INFO BicycleTravelDisutilityFactory:61  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:20,962  INFO RandomizingTimeDistanceTravelDisutilityFactory:86  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:20,966  INFO BicycleTravelDisutilityFactory:61  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:20,977  INFO RandomizingTimeDistanceTravelDisutilityFactory:86  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:20,980  INFO BicycleTravelDisutilityFactory:61  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,007  INFO NetworkImpl:419 building QuadTree for nodes: xrange(23075.88311864114,282282.497022663); yrange(23747.522399784066,243405.3900264725)
+2026-03-11T20:30:21,061  INFO NetworkImpl:428 Building QuadTree took 0.072 seconds.
+2026-03-11T20:30:21,067  INFO Counter:70 [PersonPrepareForSim] handled person # 1
+2026-03-11T20:30:21,094  INFO Counter:70 [PersonPrepareForSim] handled person # 2
+2026-03-11T20:30:21,130  INFO Counter:70 [PersonPrepareForSim] handled person # 4
+2026-03-11T20:30:21,131  INFO Counter:75 [PersonPrepareForSim] handled person # 4
+2026-03-11T20:30:21,167  INFO AbstractController:136 ###################################################
+2026-03-11T20:30:21,167  INFO AbstractController:137 ### ITERATION 0 BEGINS
+2026-03-11T20:30:21,168  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.analysis.LegTimesControlerListener with priority 0.0
+2026-03-11T20:30:21,168  INFO EventsManagerImpl:139 === Logging of event-handlers skipped ===
+2026-03-11T20:30:21,168  INFO EventsManagerImpl:140 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:21,168  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonDepartureEvent
+2026-03-11T20:30:21,168  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonArrivalEvent
+2026-03-11T20:30:21,168  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.ActivityEndEvent
+2026-03-11T20:30:21,168  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.ActivityStartEvent
+2026-03-11T20:30:21,168  INFO EventsManagerImpl:139 === Logging of event-handlers skipped ===
+2026-03-11T20:30:21,168  INFO EventsManagerImpl:140 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:21,168  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonDepartureEvent
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonArrivalEvent
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.ActivityEndEvent
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.ActivityStartEvent
+2026-03-11T20:30:21,169  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.analysis.LegHistogramListener with priority 0.0
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:139 === Logging of event-handlers skipped ===
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:140 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonDepartureEvent
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonArrivalEvent
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonStuckEvent
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:139 === Logging of event-handlers skipped ===
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:140 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonDepartureEvent
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonArrivalEvent
+2026-03-11T20:30:21,169  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonStuckEvent
+2026-03-11T20:30:21,169  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.analysis.LinkStatsControlerListener with priority 0.0
+2026-03-11T20:30:21,169  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.core.replanning.ReplanningContextImpl with priority 0.0
+2026-03-11T20:30:21,169  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.core.scoring.ScoringFunctionsForPopulation$$Lambda/0x0000000c01272318 with priority 0.0
+2026-03-11T20:30:21,179  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.core.scoring.ExperiencedPlansServiceImpl$1 with priority 0.0
+2026-03-11T20:30:21,179  INFO ControlerListenerManagerImpl:159 [it.0] all ControlerIterationStartsListeners called.
+2026-03-11T20:30:21,180  INFO ControlerListenerManagerImpl:242 calling notifyBeforeMobsim on org.matsim.core.controler.corelisteners.EventsHandlingImpl with priority 0.0
+2026-03-11T20:30:21,180  INFO EventsManagerImpl:173 resetting Event-Handlers
+2026-03-11T20:30:21,180  INFO EventsManagerImpl:180   org.matsim.core.trafficmonitoring.TravelTimeCalculator
+2026-03-11T20:30:21,182  INFO EventsManagerImpl:180   org.matsim.contrib.bicycle.BicycleScoreEventsCreator
+2026-03-11T20:30:21,182  INFO EventsManagerImpl:180   org.matsim.analysis.VolumesAnalyzer
+2026-03-11T20:30:21,184  INFO EventsManagerImpl:180   org.matsim.core.scoring.ScoringFunctionsForPopulation
+2026-03-11T20:30:21,184  INFO EventsManagerImpl:180   org.matsim.analysis.LegHistogram
+2026-03-11T20:30:21,184  INFO EventsManagerImpl:180   org.matsim.analysis.CalcLegTimes
+2026-03-11T20:30:21,186  INFO EventsManagerImpl:139 === Logging of event-handlers skipped ===
+2026-03-11T20:30:21,186  INFO EventsManagerImpl:140 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:21,186  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.Event
+2026-03-11T20:30:21,186  INFO EventsManagerImpl:139 === Logging of event-handlers skipped ===
+2026-03-11T20:30:21,186  INFO EventsManagerImpl:140 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:21,186  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.Event
+2026-03-11T20:30:21,186  INFO ControlerListenerManagerImpl:242 calling notifyBeforeMobsim on org.matsim.core.controler.corelisteners.PlansDumpingImpl with priority 0.0
+2026-03-11T20:30:21,186  INFO PlansDumpingImpl:77 dumping plans...
+2026-03-11T20:30:21,199  INFO Counter:70 [PopulationWriter] dumped person # 1
+2026-03-11T20:30:21,199  INFO Counter:70 [PopulationWriter] dumped person # 2
+2026-03-11T20:30:21,199  INFO Counter:70 [PopulationWriter] dumped person # 4
+2026-03-11T20:30:21,204  INFO Counter:70 [ParallelPopulationWriterV6] dumped person # 1
+2026-03-11T20:30:21,205  INFO Counter:70 [ParallelPopulationWriterV6] dumped person # 2
+2026-03-11T20:30:21,206  INFO Counter:70 [ParallelPopulationWriterV6] dumped person # 4
+2026-03-11T20:30:21,206  INFO Counter:75 [ParallelPopulationWriterV6] dumped person # 4
+2026-03-11T20:30:21,206  INFO PopulationWriter:150 Population written to: output_cputreshold/ITERS/it.0/0.plans.xml.gz
+2026-03-11T20:30:21,207  INFO Counter:75 [PopulationWriter] dumped person # 4
+2026-03-11T20:30:21,207  INFO PlansDumpingImpl:94 finished plans dump.
+2026-03-11T20:30:21,207  INFO ControlerListenerManagerImpl:248 calling notifyBeforeMobsim on org.matsim.core.population.VspPlansCleaner with priority 0.0
+2026-03-11T20:30:21,208  INFO ControlerListenerManagerImpl:251 [it.0] all ControlerBeforeMobsimListeners called.
+2026-03-11T20:30:21,208  INFO PrepareForMobsimImpl:86 Network seems to be multimodal. Create car-only network which is handed over to PersonPrepareForSim.
+2026-03-11T20:30:21,208  INFO NetworkImpl:165  node # 1
+2026-03-11T20:30:21,208  INFO NetworkImpl:165  node # 4
+2026-03-11T20:30:21,208  INFO NetworkImpl:165  node # 16
+2026-03-11T20:30:21,208  INFO NetworkImpl:165  node # 64
+2026-03-11T20:30:21,208  INFO NetworkImpl:165  node # 256
+2026-03-11T20:30:21,208  INFO NetworkImpl:165  node # 1024
+2026-03-11T20:30:21,208  INFO NetworkImpl:165  node # 4096
+2026-03-11T20:30:21,209  INFO NetworkImpl:165  node # 16384
+2026-03-11T20:30:21,211  INFO NetworkImpl:165  node # 65536
+2026-03-11T20:30:21,218  INFO NetworkImpl:161  link # 1
+2026-03-11T20:30:21,218  INFO NetworkImpl:161  link # 4
+2026-03-11T20:30:21,218  INFO NetworkImpl:161  link # 16
+2026-03-11T20:30:21,218  INFO NetworkImpl:161  link # 64
+2026-03-11T20:30:21,218  INFO NetworkImpl:161  link # 256
+2026-03-11T20:30:21,220  INFO NetworkImpl:161  link # 1024
+2026-03-11T20:30:21,224  INFO NetworkImpl:161  link # 4096
+2026-03-11T20:30:21,240  INFO NetworkImpl:161  link # 16384
+2026-03-11T20:30:21,319  INFO NetworkImpl:161  link # 65536
+2026-03-11T20:30:21,455  INFO RandomizingTimeDistanceTravelDisutilityFactory:86  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,457  INFO BicycleTravelDisutilityFactory:61  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,466  INFO RandomizingTimeDistanceTravelDisutilityFactory:86  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,467  INFO BicycleTravelDisutilityFactory:61  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,479  INFO RandomizingTimeDistanceTravelDisutilityFactory:86  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,480  INFO BicycleTravelDisutilityFactory:61  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,492  INFO RandomizingTimeDistanceTravelDisutilityFactory:86  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,493  INFO BicycleTravelDisutilityFactory:61  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,502  INFO RandomizingTimeDistanceTravelDisutilityFactory:86  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,507  INFO BicycleTravelDisutilityFactory:61  sigma: 3.0; resulting normalization: 0.011108996538242306
+2026-03-11T20:30:21,516  INFO Counter:70 [PersonPrepareForSim] handled person # 2
+2026-03-11T20:30:21,516  INFO Counter:70 [PersonPrepareForSim] handled person # 1
+2026-03-11T20:30:21,517  INFO Counter:70 [PersonPrepareForSim] handled person # 4
+2026-03-11T20:30:21,517  INFO Counter:75 [PersonPrepareForSim] handled person # 4
+2026-03-11T20:30:21,548  INFO MobsimListenerManager:50 calling addQueueSimulationListener
+2026-03-11T20:30:21,548  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimInitializedListener
+2026-03-11T20:30:21,548  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.vis.snapshotwriters.SnapshotWriterManager
+2026-03-11T20:30:21,548  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimBeforeCleanupListener
+2026-03-11T20:30:21,548  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimListener
+2026-03-11T20:30:21,548  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimAfterSimStepListener
+2026-03-11T20:30:21,550  INFO QSimProvider:131 Added MobsimEngine class org.matsim.core.mobsim.qsim.ActivityEngineDefaultImpl
+2026-03-11T20:30:21,550  INFO QSimProvider:137 Added Activityhandler class org.matsim.core.mobsim.qsim.ActivityEngineDefaultImpl
+2026-03-11T20:30:21,959  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.055265688370324674 to 0.05636275688066879
+2026-03-11T20:30:21,959  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.021260402248514897 to 0.024055471167980572
+2026-03-11T20:30:21,962  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.032340405505669405 to 0.03488078444961741
+2026-03-11T20:30:21,962  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.032340405505669405 to 0.03488078444961741
+2026-03-11T20:30:21,965  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04185172861700369 to 0.04405851447951032
+2026-03-11T20:30:21,965  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04185172861700369 to 0.04405851447951032
+2026-03-11T20:30:21,966  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.03515452820445508 to 0.03763903611743116
+2026-03-11T20:30:21,967  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.034403956386880194 to 0.03690700770535922
+2026-03-11T20:30:21,967  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.06394778663312707 to 0.06397936309809217
+2026-03-11T20:30:21,967  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.05918980029294009 to 0.0598366413742482
+2026-03-11T20:30:21,967  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04088729523084043 to 0.04314615409885905
+2026-03-11T20:30:22,697  INFO QSimProvider:131 Added MobsimEngine class org.matsim.core.mobsim.qsim.qnetsimengine.QNetsimEngineWithThreadpool
+2026-03-11T20:30:22,697  INFO QSimProvider:143 Added DepartureHandler class org.matsim.core.mobsim.qsim.qnetsimengine.NetworkModeDepartureHandlerDefaultImpl
+2026-03-11T20:30:22,697  INFO QSimProvider:131 Added MobsimEngine class org.matsim.core.mobsim.qsim.DefaultTeleportationEngine
+2026-03-11T20:30:22,697  INFO QSimProvider:143 Added DepartureHandler class org.matsim.core.mobsim.qsim.DefaultTeleportationEngine
+2026-03-11T20:30:22,698  INFO QSimProvider:149 Added AgentSource class org.matsim.core.mobsim.qsim.agents.PopulationAgentSource
+2026-03-11T20:30:22,698  INFO MobsimListenerManager:50 calling addQueueSimulationListener
+2026-03-11T20:30:22,698  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimBeforeSimStepListener
+2026-03-11T20:30:22,698  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.qsim.messagequeueengine.MessageQueueEngine
+2026-03-11T20:30:22,698  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimListener
+2026-03-11T20:30:22,698  INFO QSimProvider:155 Added MobsimListener class org.matsim.core.mobsim.qsim.messagequeueengine.MessageQueueEngine
+2026-03-11T20:30:22,701  INFO PopulationUtils:1292 adding scenario element for allpersons container
+2026-03-11T20:30:22,702  INFO PopulationImpl:111  person # 1
+2026-03-11T20:30:22,702  INFO PopulationImpl:111  person # 4
+2026-03-11T20:30:22,702  INFO VehicleUtils:431 adding scenario element for allvehicles container
+2026-03-11T20:30:22,702  INFO Counter:70 [VehiclesImpl] added vehicle # 1
+2026-03-11T20:30:22,702  INFO Counter:70 [VehiclesImpl] added vehicle # 2
+2026-03-11T20:30:22,924  INFO AbstractQNetsimEngine:418 Assigned 43263 nodes and 97778 links to QSimEngineRunner #0
+2026-03-11T20:30:22,924  INFO AbstractQNetsimEngine:418 Assigned 43263 nodes and 98207 links to QSimEngineRunner #1
+2026-03-11T20:30:22,925  INFO AbstractQNetsimEngine:418 Assigned 43263 nodes and 97841 links to QSimEngineRunner #2
+2026-03-11T20:30:22,925  INFO AbstractQNetsimEngine:418 Assigned 43262 nodes and 97986 links to QSimEngineRunner #3
+2026-03-11T20:30:22,925  INFO AbstractQNetsimEngine:418 Assigned 43262 nodes and 97913 links to QSimEngineRunner #4
+2026-03-11T20:30:22,928  INFO EventsManagerImpl:116  event # 1
+2026-03-11T20:30:23,050  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 07:30:00 : #links=0 #nodes=0
+2026-03-11T20:30:23,052  INFO QSim:552 SIMULATION (NEW QSim) AT 07:30:00 : #Veh=4 lost=0 simT=0.0s realT=1s; (s/r): 0.0
+2026-03-11T20:30:23,207  INFO EventsManagerImpl:116  event # 4
+2026-03-11T20:30:23,219  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 08:00:00 : #links=0 #nodes=0
+2026-03-11T20:30:23,220  INFO QSim:552 SIMULATION (NEW QSim) AT 08:00:00 : #Veh=4 lost=0 simT=1800.0s realT=1s; (s/r): 1800.0
+2026-03-11T20:30:23,286  INFO EventsManagerImpl:116  event # 16
+2026-03-11T20:30:23,296  INFO EventsManagerImpl:116  event # 64
+2026-03-11T20:30:23,380  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 09:00:00 : #links=0 #nodes=0
+2026-03-11T20:30:23,380  INFO QSim:552 SIMULATION (NEW QSim) AT 09:00:00 : #Veh=4 lost=0 simT=5400.0s realT=1s; (s/r): 5400.0
+2026-03-11T20:30:23,394  INFO EventsManagerImpl:116  event # 256
+2026-03-11T20:30:23,488  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 10:00:00 : #links=0 #nodes=0
+2026-03-11T20:30:23,488  INFO QSim:552 SIMULATION (NEW QSim) AT 10:00:00 : #Veh=4 lost=0 simT=9000.0s realT=1s; (s/r): 9000.0
+2026-03-11T20:30:23,571  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 11:00:00 : #links=0 #nodes=0
+2026-03-11T20:30:23,571  INFO QSim:552 SIMULATION (NEW QSim) AT 11:00:00 : #Veh=4 lost=0 simT=12600.0s realT=2s; (s/r): 6300.0
+2026-03-11T20:30:23,654  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 12:00:00 : #links=0 #nodes=0
+2026-03-11T20:30:23,654  INFO QSim:552 SIMULATION (NEW QSim) AT 12:00:00 : #Veh=4 lost=0 simT=16200.0s realT=2s; (s/r): 8100.0
+2026-03-11T20:30:23,737  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 13:00:00 : #links=0 #nodes=0
+2026-03-11T20:30:23,737  INFO QSim:552 SIMULATION (NEW QSim) AT 13:00:00 : #Veh=4 lost=0 simT=19800.0s realT=2s; (s/r): 9900.0
+2026-03-11T20:30:23,821  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 14:00:00 : #links=0 #nodes=0
+2026-03-11T20:30:23,821  INFO QSim:552 SIMULATION (NEW QSim) AT 14:00:00 : #Veh=4 lost=0 simT=23400.0s realT=2s; (s/r): 11700.0
+2026-03-11T20:30:23,904  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 15:00:00 : #links=0 #nodes=0
+2026-03-11T20:30:23,904  INFO QSim:552 SIMULATION (NEW QSim) AT 15:00:00 : #Veh=4 lost=0 simT=27000.0s realT=2s; (s/r): 13500.0
+2026-03-11T20:30:23,983  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 16:00:00 : #links=0 #nodes=0
+2026-03-11T20:30:23,983  INFO QSim:552 SIMULATION (NEW QSim) AT 16:00:00 : #Veh=4 lost=0 simT=30600.0s realT=2s; (s/r): 15300.0
+2026-03-11T20:30:24,065  INFO AbstractQNetsimEngine:356 SIMULATION (QNetsimEngine) AT 17:00:00 : #links=0 #nodes=0
+2026-03-11T20:30:24,065  INFO QSim:552 SIMULATION (NEW QSim) AT 17:00:00 : #Veh=2 lost=0 simT=34200.0s realT=2s; (s/r): 17100.0
+2026-03-11T20:30:24,072  INFO EventsManagerImpl:116  event # 1024
+2026-03-11T20:30:24,251  INFO AbstractController$9:237 ### ITERATION 0 fires after mobsim event
+2026-03-11T20:30:24,252  INFO Gbl:196 Thread performance: Thread=class org.matsim.core.events.SimStepParallelEventsManagerImpl$ProcessEventsRunnable0  cpu-time=0.190111sec
+2026-03-11T20:30:24,252  INFO ControlerListenerManagerImpl:269 calling notifyAfterMobsim on org.matsim.analysis.LegTimesControlerListener with priority 0.0
+2026-03-11T20:30:24,254  INFO LegTimesControlerListener:73 [0] average leg duration is: 707 seconds = 00:11:47
+2026-03-11T20:30:24,254  INFO ControlerListenerManagerImpl:269 calling notifyAfterMobsim on org.matsim.core.events.MobsimScopeEventHandling with priority 0.0
+2026-03-11T20:30:24,254  INFO ControlerListenerManagerImpl:269 calling notifyAfterMobsim on org.matsim.core.scoring.EventsToActivities$1 with priority 0.0
+2026-03-11T20:30:24,254  INFO ControlerListenerManagerImpl:272 [it.0] all ControlerAfterMobsimListeners called.
+2026-03-11T20:30:24,254  INFO AbstractController$4:162 ### ITERATION 0 fires scoring event
+2026-03-11T20:30:24,254  INFO ControlerListenerManagerImpl:197 calling notifyScoring on org.matsim.core.scoring.PlansScoringImpl with priority 0.0
+2026-03-11T20:30:24,255  INFO NewScoreAssignerImpl:60 it: 0 msaStart: null
+2026-03-11T20:30:24,255  INFO ControlerListenerManagerImpl:209 [it.0] all ControlerScoringListeners called.
+2026-03-11T20:30:24,255  INFO AbstractController$5:170 ### ITERATION 0 fires iteration end event
+2026-03-11T20:30:24,255  INFO ControlerListenerManagerImpl:172 calling notifyIterationEnds on org.matsim.core.controler.corelisteners.EventsHandlingImpl with priority 0.0
+2026-03-11T20:30:24,256  INFO EventsManagerImpl:164 removing Event-Handler: org.matsim.core.events.algorithms.EventWriterXML
+2026-03-11T20:30:24,256  INFO EventsManagerImpl:164 removing Event-Handler: org.matsim.core.events.algorithms.EventWriterXML
+2026-03-11T20:30:24,256  INFO ControlerListenerManagerImpl:172 calling notifyIterationEnds on org.matsim.core.scoring.PlansScoringImpl with priority 0.0
+2026-03-11T20:30:24,256  INFO ControlerListenerManagerImpl:180 calling notifyIterationEnds on org.matsim.counts.CountsControlerListener with priority 0.0
+2026-03-11T20:30:24,256  INFO ControlerListenerManagerImpl:180 calling notifyIterationEnds on org.matsim.analysis.ModeChoiceCoverageControlerListener with priority 0.0
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (1x) of mode bike = 0.25
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (1x) of mode car = 0.25
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (1x) of mode pt = 0.25
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (1x) of mode walk = 0.25
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (5x) of mode bike = 0.0
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (5x) of mode car = 0.0
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (5x) of mode pt = 0.0
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (5x) of mode walk = 0.0
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (10x) of mode bike = 0.0
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (10x) of mode car = 0.0
+2026-03-11T20:30:24,257  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (10x) of mode pt = 0.0
+2026-03-11T20:30:24,258  INFO ModeChoiceCoverageControlerListener:144 -- mode choice coverage (10x) of mode walk = 0.0
+2026-03-11T20:30:24,258  INFO ControlerListenerManagerImpl:180 calling notifyIterationEnds on org.matsim.analysis.ModeStatsControlerListener with priority 0.0
+2026-03-11T20:30:24,258  INFO ModeStatsControlerListener:133 Mode shares over all 8.0 trips found. MainModeIdentifier: class org.matsim.core.router.DefaultAnalysisMainModeIdentifier
+2026-03-11T20:30:24,258  INFO ModeStatsControlerListener:140 -- mode share of mode bike = 0.25
+2026-03-11T20:30:24,258  INFO ModeStatsControlerListener:140 -- mode share of mode car = 0.25
+2026-03-11T20:30:24,259  INFO ModeStatsControlerListener:140 -- mode share of mode pt = 0.25
+2026-03-11T20:30:24,259  INFO ModeStatsControlerListener:140 -- mode share of mode walk = 0.25
+2026-03-11T20:30:24,259  INFO ControlerListenerManagerImpl:180 calling notifyIterationEnds on org.matsim.analysis.ScoreStatsControlerListener with priority 0.0
+2026-03-11T20:30:24,259  INFO ScoreStatsControlerListener:154 -- avg. score of the executed plan of each agent: 129.8938000410035
+2026-03-11T20:30:24,259  INFO ScoreStatsControlerListener:155 -- avg. score of the worst plan of each agent: 129.8938000410035
+2026-03-11T20:30:24,259  INFO ScoreStatsControlerListener:156 -- avg. of the avg. plan score per agent: 129.8938000410035
+2026-03-11T20:30:24,259  INFO ScoreStatsControlerListener:157 -- avg. score of the best plan of each agent: 129.8938000410035
+2026-03-11T20:30:24,260  INFO ControlerListenerManagerImpl:180 calling notifyIterationEnds on org.matsim.analysis.IterationTravelStatsControlerListener with priority 0.0
+2026-03-11T20:30:24,264  INFO TravelDistanceStats:115 -- average leg distance per plan (executed plans only): 2988.9874688248156 meters
+2026-03-11T20:30:24,264  INFO TravelDistanceStats:116 average leg distance per Person (executed plans only): 11955.949875299262 meters (statistic on all 16 legs which have a finite distance)
+2026-03-11T20:30:24,264  INFO TravelDistanceStats:117 -- average trip distance per plan (executed plans only): 5977.974937649632 meters
+2026-03-11T20:30:24,265  INFO TravelDistanceStats:118 average trip distance per Person (executed plans only): 11955.949875299264 meters (statistic on all 8 trips which have a finite distance)
+2026-03-11T20:30:24,265  INFO TravelDistanceStats:119 (TravelDistanceStats takes an average over all legs where the simulation reports travelled (network) distances
+2026-03-11T20:30:24,265  INFO TravelDistanceStats:120 (and teleported legs whose route contains a distance.)
+2026-03-11T20:30:24,274  WARN CoordUtils$EucledianDistanceCalculator:432 Mixed use of elevation in coordinates: [x=152721.889 | y=172843.619 | z=0.0]; [x=150844.17944 | y=163502.64919997938]
+2026-03-11T20:30:24,274  WARN CoordUtils$EucledianDistanceCalculator:434 Returning projected coordinate distance (using x and y components only)
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:432 Mixed use of elevation in coordinates: [x=146881.87944 | y=174443.8791999789 | z=0.0]; [x=145643.306 | y=168483.977]
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:434 Returning projected coordinate distance (using x and y components only)
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:432 Mixed use of elevation in coordinates: [x=152573.7 | y=173736.769 | z=0.0]; [x=153448.279276 | y=174777.4751059804]
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:434 Returning projected coordinate distance (using x and y components only)
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:432 Mixed use of elevation in coordinates: [x=153448.279276 | y=174777.4751059804 | z=0.0]; [x=152573.7 | y=173736.769]
+2026-03-11T20:30:24,276  WARN CoordUtils$EucledianDistanceCalculator:434 Returning projected coordinate distance (using x and y components only)
+2026-03-11T20:30:24,277  INFO ActivityWriter:39 Writing all Activities to activitiescsv
+2026-03-11T20:30:24,278  INFO ActivityWriter:59 ...done
+2026-03-11T20:30:24,278  INFO ControlerListenerManagerImpl:180 calling notifyIterationEnds on org.matsim.analysis.LegTimesControlerListener with priority 0.0
+2026-03-11T20:30:24,278  INFO EventsManagerImpl:164 removing Event-Handler: org.matsim.analysis.CalcLegTimes
+2026-03-11T20:30:24,278  INFO EventsManagerImpl:164 removing Event-Handler: org.matsim.analysis.CalcLegTimes
+2026-03-11T20:30:24,278  INFO ControlerListenerManagerImpl:180 calling notifyIterationEnds on org.matsim.analysis.LegHistogramListener with priority 0.0
+2026-03-11T20:30:24,284  INFO LegHistogramListener:78 number of legs:	32	100%
+2026-03-11T20:30:24,285  INFO LegHistogramListener:85 number of bike legs:	4	12.5%
+2026-03-11T20:30:24,285  INFO LegHistogramListener:85 number of car legs:	4	12.5%
+2026-03-11T20:30:24,285  INFO LegHistogramListener:85 number of pt legs:	4	12.5%
+2026-03-11T20:30:24,285  INFO LegHistogramListener:85 number of walk legs:	20	62.5%
+2026-03-11T20:30:26,162  INFO ControlerListenerManagerImpl:180 calling notifyIterationEnds on org.matsim.analysis.LinkStatsControlerListener with priority 0.0
+2026-03-11T20:30:26,163  INFO ControlerListenerManagerImpl:184 [it.0] all ControlerIterationEndsListeners called.
+2026-03-11T20:30:26,222  INFO AbstractController:184 ### ITERATION 0 ENDS
+2026-03-11T20:30:26,222  INFO AbstractController:185 ###################################################
+2026-03-11T20:30:26,222  INFO AbstractController:136 ###################################################
+2026-03-11T20:30:26,222  INFO AbstractController:137 ### ITERATION 1 BEGINS
+2026-03-11T20:30:26,222  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.analysis.LegTimesControlerListener with priority 0.0
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:139 === Logging of event-handlers skipped ===
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:140 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonDepartureEvent
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonArrivalEvent
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.ActivityEndEvent
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.ActivityStartEvent
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:139 === Logging of event-handlers skipped ===
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:140 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonDepartureEvent
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonArrivalEvent
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.ActivityEndEvent
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.ActivityStartEvent
+2026-03-11T20:30:26,222  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.analysis.LegHistogramListener with priority 0.0
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:139 === Logging of event-handlers skipped ===
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:140 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:26,222  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonDepartureEvent
+2026-03-11T20:30:26,223  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonArrivalEvent
+2026-03-11T20:30:26,223  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonStuckEvent
+2026-03-11T20:30:26,223  INFO EventsManagerImpl:139 === Logging of event-handlers skipped ===
+2026-03-11T20:30:26,223  INFO EventsManagerImpl:140 To enable debug output, set an environment variable i.e. export LOG_LEVEL='debug', or set log.setLogLevel(Level.DEBUG) in your run class.
+2026-03-11T20:30:26,223  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonDepartureEvent
+2026-03-11T20:30:26,223  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonArrivalEvent
+2026-03-11T20:30:26,223  INFO EventsManagerImpl:210     > org.matsim.api.core.v01.events.PersonStuckEvent
+2026-03-11T20:30:26,223  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.analysis.LinkStatsControlerListener with priority 0.0
+2026-03-11T20:30:26,223  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.core.replanning.ReplanningContextImpl with priority 0.0
+2026-03-11T20:30:26,223  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.core.scoring.ScoringFunctionsForPopulation$$Lambda/0x0000000c01272318 with priority 0.0
+2026-03-11T20:30:26,223  INFO ControlerListenerManagerImpl:156 calling notifyIterationStarts on org.matsim.core.scoring.ExperiencedPlansServiceImpl$1 with priority 0.0
+2026-03-11T20:30:26,223  INFO ControlerListenerManagerImpl:159 [it.1] all ControlerIterationStartsListeners called.
+2026-03-11T20:30:26,224  INFO ControlerListenerManagerImpl:221 calling notifyReplanning on org.matsim.core.controler.corelisteners.PlansReplanningImpl with priority 0.0
+2026-03-11T20:30:26,267  WARN ExpBetaPlanChanger:102 Would make sense to revise this once more.  See comments in code.  kai, nov08
+2026-03-11T20:30:26,267  INFO AbstractMultithreadedModule:142 [MutateActivityTimeAllocation] starting 5 threads, handling 0 plans
+2026-03-11T20:30:26,267  INFO AbstractMultithreadedModule:157 [MutateActivityTimeAllocation] all 5 threads finished.
+2026-03-11T20:30:26,268  INFO GenericPlanStrategyImpl:135 Plan-Strategy finished, 0 plans handled. Strategy: RandomPlanSelector_TimeAllocationMutatorModule
+2026-03-11T20:30:26,268  INFO AbstractMultithreadedModule:142 [PlanRouter] starting 5 threads, handling 0 plans
+2026-03-11T20:30:26,268  INFO AbstractMultithreadedModule:157 [PlanRouter] all 5 threads finished.
+2026-03-11T20:30:26,268  INFO GenericPlanStrategyImpl:135 Plan-Strategy finished, 0 plans handled. Strategy: RandomPlanSelector_ReRoute
+2026-03-11T20:30:26,268  INFO AbstractMultithreadedModule:142 [TripsToLegsAlgorithm] starting 5 threads, handling 3 plans
+2026-03-11T20:30:26,268  INFO Counter:70 [TripsToLegsAlgorithm] handled plan # 2
+2026-03-11T20:30:26,268  INFO Counter:70 [TripsToLegsAlgorithm] handled plan # 1
+2026-03-11T20:30:26,269  INFO AbstractMultithreadedModule:157 [TripsToLegsAlgorithm] all 5 threads finished.
+2026-03-11T20:30:26,269  INFO AbstractMultithreadedModule:142 [ChooseRandomLegMode] starting 5 threads, handling 3 plans
+2026-03-11T20:30:26,269  INFO Counter:70 [ChooseRandomLegMode] handled plan # 1
+2026-03-11T20:30:26,269  INFO Counter:70 [ChooseRandomLegMode] handled plan # 2
+2026-03-11T20:30:26,269  INFO AbstractMultithreadedModule:157 [ChooseRandomLegMode] all 5 threads finished.
+2026-03-11T20:30:26,298  INFO AbstractMultithreadedModule:142 [PlanRouter] starting 5 threads, handling 3 plans
+2026-03-11T20:30:26,301  WARN CoordUtils:393 Mix of 2D / 3D coordinates. Assuming 2D only.
+ This message given only once.
+2026-03-11T20:30:26,321  INFO Counter:70 [PlanRouter] handled plan # 1
+2026-03-11T20:30:26,391  INFO Counter:70 [PlanRouter] handled plan # 2
+2026-03-11T20:30:26,406  INFO AbstractMultithreadedModule:157 [PlanRouter] all 5 threads finished.
+2026-03-11T20:30:26,406  INFO GenericPlanStrategyImpl:135 Plan-Strategy finished, 3 plans handled. Strategy: RandomPlanSelector_TripsToLegsModule_ChangeLegMode_ReRoute
+2026-03-11T20:30:26,406  INFO GenericPlanStrategyImpl:135 Plan-Strategy finished, 1 plans handled. Strategy: ExpBetaPlanChanger
+2026-03-11T20:30:26,407  INFO ControlerListenerManagerImpl:230 [it.1] all ControlerReplanningListeners called.
+2026-03-11T20:30:26,407  INFO ControlerListenerManagerImpl:242 calling notifyBeforeMobsim on org.matsim.core.controler.corelisteners.EventsHandlingImpl with priority 0.0
+2026-03-11T20:30:26,407  INFO EventsManagerImpl:173 resetting Event-Handlers
+2026-03-11T20:30:26,407  INFO EventsManagerImpl:180   org.matsim.core.trafficmonitoring.TravelTimeCalculator
+2026-03-11T20:30:26,421  INFO EventsManagerImpl:180   org.matsim.contrib.bicycle.BicycleScoreEventsCreator
+2026-03-11T20:30:26,421  INFO EventsManagerImpl:180   org.matsim.analysis.VolumesAnalyzer
+2026-03-11T20:30:26,423  INFO EventsManagerImpl:180   org.matsim.core.scoring.ScoringFunctionsForPopulation
+2026-03-11T20:30:26,423  INFO EventsManagerImpl:180   org.matsim.analysis.LegHistogram
+2026-03-11T20:30:26,423  INFO EventsManagerImpl:180   org.matsim.analysis.CalcLegTimes
+2026-03-11T20:30:26,423  INFO ControlerListenerManagerImpl:242 calling notifyBeforeMobsim on org.matsim.core.controler.corelisteners.PlansDumpingImpl with priority 0.0
+2026-03-11T20:30:26,423  INFO PlansDumpingImpl:77 dumping plans...
+2026-03-11T20:30:26,427  INFO Counter:70 [PopulationWriter] dumped person # 1
+2026-03-11T20:30:26,428  INFO Counter:70 [PopulationWriter] dumped person # 2
+2026-03-11T20:30:26,428  INFO Counter:70 [PopulationWriter] dumped person # 4
+2026-03-11T20:30:26,429  INFO Counter:70 [ParallelPopulationWriterV6] dumped person # 1
+2026-03-11T20:30:26,429  INFO Counter:70 [ParallelPopulationWriterV6] dumped person # 2
+2026-03-11T20:30:26,430  INFO Counter:70 [ParallelPopulationWriterV6] dumped person # 4
+2026-03-11T20:30:26,430  INFO Counter:75 [ParallelPopulationWriterV6] dumped person # 4
+2026-03-11T20:30:26,430  INFO PopulationWriter:150 Population written to: output_cputreshold/ITERS/it.1/1.plans.xml.gz
+2026-03-11T20:30:26,431  INFO Counter:75 [PopulationWriter] dumped person # 4
+2026-03-11T20:30:26,431  INFO PlansDumpingImpl:94 finished plans dump.
+2026-03-11T20:30:26,431  INFO ControlerListenerManagerImpl:248 calling notifyBeforeMobsim on org.matsim.core.population.VspPlansCleaner with priority 0.0
+2026-03-11T20:30:26,431  INFO ControlerListenerManagerImpl:251 [it.1] all ControlerBeforeMobsimListeners called.
+2026-03-11T20:30:26,431  INFO PrepareForMobsimImpl:86 Network seems to be multimodal. Create car-only network which is handed over to PersonPrepareForSim.
+2026-03-11T20:30:26,431  INFO NetworkImpl:165  node # 1
+2026-03-11T20:30:26,431  INFO NetworkImpl:165  node # 4
+2026-03-11T20:30:26,431  INFO NetworkImpl:165  node # 16
+2026-03-11T20:30:26,431  INFO NetworkImpl:165  node # 64
+2026-03-11T20:30:26,431  INFO NetworkImpl:165  node # 256
+2026-03-11T20:30:26,432  INFO NetworkImpl:165  node # 1024
+2026-03-11T20:30:26,432  INFO NetworkImpl:165  node # 4096
+2026-03-11T20:30:26,433  INFO NetworkImpl:165  node # 16384
+2026-03-11T20:30:26,438  INFO NetworkImpl:165  node # 65536
+2026-03-11T20:30:26,459  INFO NetworkImpl:161  link # 1
+2026-03-11T20:30:26,459  INFO NetworkImpl:161  link # 4
+2026-03-11T20:30:26,459  INFO NetworkImpl:161  link # 16
+2026-03-11T20:30:26,459  INFO NetworkImpl:161  link # 64
+2026-03-11T20:30:26,460  INFO NetworkImpl:161  link # 256
+2026-03-11T20:30:26,463  INFO NetworkImpl:161  link # 1024
+2026-03-11T20:30:26,470  INFO NetworkImpl:161  link # 4096
+2026-03-11T20:30:26,494  INFO NetworkImpl:161  link # 16384
+2026-03-11T20:30:26,562  INFO NetworkImpl:161  link # 65536
+2026-03-11T20:30:26,871  INFO Counter:70 [PersonPrepareForSim] handled person # 2
+2026-03-11T20:30:26,871  INFO Counter:70 [PersonPrepareForSim] handled person # 1
+2026-03-11T20:30:26,872  INFO Counter:70 [PersonPrepareForSim] handled person # 4
+2026-03-11T20:30:26,872  INFO Counter:75 [PersonPrepareForSim] handled person # 4
+2026-03-11T20:30:26,880  INFO MobsimListenerManager:50 calling addQueueSimulationListener
+2026-03-11T20:30:26,880  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimInitializedListener
+2026-03-11T20:30:26,880  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.vis.snapshotwriters.SnapshotWriterManager
+2026-03-11T20:30:26,880  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimBeforeCleanupListener
+2026-03-11T20:30:26,880  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimListener
+2026-03-11T20:30:26,880  INFO MobsimListenerManager:54   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimAfterSimStepListener
+2026-03-11T20:30:26,880  INFO QSimProvider:131 Added MobsimEngine class org.matsim.core.mobsim.qsim.ActivityEngineDefaultImpl
+2026-03-11T20:30:26,880  INFO QSimProvider:137 Added Activityhandler class org.matsim.core.mobsim.qsim.ActivityEngineDefaultImpl

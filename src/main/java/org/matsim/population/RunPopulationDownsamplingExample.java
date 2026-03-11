@@ -43,7 +43,7 @@ class RunPopulationDownsamplingExample {
     public static void main(final String[] args) {
 
         String inputPopFilename = "src/main/java/org/matsim/population/output/population.xml.gz";
-        String outputPopFilename = "src/main/java/org/matsim/population/output/population_1percent_sample.xml.gz";
+        String outputPopFilename = "src/main/java/org/matsim/population/output/population_25percent_sample.xml.gz";
 
 //        if ( args!=null ) {
 //            if (args.length != 2) {
@@ -65,8 +65,8 @@ class RunPopulationDownsamplingExample {
         Scenario scenario = ScenarioUtils.createScenario(ConfigUtils.createConfig());
 
         // the writer will be called by the reader and write the new population file. As parameter the fraction of the
-        // input population is passed. In our case we will downsize the population to 1%.
-        StreamingPopulationWriter writer = new StreamingPopulationWriter(0.1);
+        // input population is passed. In our case we will downsize the population to 10%.
+        StreamingPopulationWriter writer = new StreamingPopulationWriter(0.25);
 
         // the reader will read in an existing population file
         StreamingPopulationReader reader = new StreamingPopulationReader(scenario);

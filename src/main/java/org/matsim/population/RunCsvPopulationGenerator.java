@@ -19,8 +19,10 @@ import java.util.Map;
 public class RunCsvPopulationGenerator {
 
     public static void main(String[] args) throws IOException {
-        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population.csv");
-        Path out = Path.of("src/main/java/org/matsim/population/output/population.xml.gz");
+//        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population.csv");
+        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population_active.csv");
+//        Path out = Path.of("src/main/java/org/matsim/population/output/population.xml.gz");
+        Path out = Path.of("src/main/java/org/matsim/population/output/population_active.xml.gz");
 
         Scenario scenario = ScenarioUtils.createScenario(ConfigUtils.createConfig());
         createPopulationFromCsv(scenario, csv);
@@ -61,6 +63,7 @@ public class RunCsvPopulationGenerator {
                 person.getAttributes().putAttribute("has_car", parseBoolean(getRequired(c, idx, "has_car")));
                 person.getAttributes().putAttribute("carAvail", parseBoolean(getRequired(c, idx, "has_car")) ? "always" : "never");
                 person.getAttributes().putAttribute("brussels_resident", parseBoolean(getRequired(c, idx, "brussels_resident")));
+                person.getAttributes().putAttribute("availableModes", getRequired(c, idx, "availableModes"));
 
                 // ---- locations (EPSG:31370, same as network) ----
                 Coord home = new Coord(
@@ -73,8 +76,8 @@ public class RunCsvPopulationGenerator {
                 );
 
                 // ---- times: in seconds since midnight already  ----
-                double depWork_s = parseSecondsSinceMidnight(getRequired(c, idx, "departure_time_home"));
-                double depHome_s = parseSecondsSinceMidnight(getRequired(c, idx, "departure_time_work"));
+                double depHome_s = parseSecondsSinceMidnight(getRequired(c, idx, "departure_time_home"));
+                double depWork_s = parseSecondsSinceMidnight(getRequired(c, idx, "departure_time_work"));
 
                 // ---- mode (car/bike/walk/public transport) ----
                 String mode = normalizeMode(getRequired(c, idx, "matsim_mode"));
@@ -84,14 +87,14 @@ public class RunCsvPopulationGenerator {
                 person.addPlan(plan);
 
                 Activity homeAct1 = pf.createActivityFromCoord("home", home);
-                homeAct1.setEndTime(depWork_s);
+                homeAct1.setEndTime(depHome_s);
                 plan.addActivity(homeAct1);
 
                 Leg leg1 = pf.createLeg(mode);
                 plan.addLeg(leg1);
 
                 Activity workAct = pf.createActivityFromCoord("work", work);
-                workAct.setEndTime(depHome_s);
+                workAct.setEndTime(depWork_s);
                 plan.addActivity(workAct);
 
                 Leg leg2 = pf.createLeg(mode);

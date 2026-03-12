@@ -1,0 +1,15 @@
+pattern	0+	5+	10+	15+	20+	25+	30+	35+	40+	45+	50+	55+	60+
+bike interaction---bike interaction	568	271	239	219	212	163	126	83	93	39	49	31	762
+bike interaction---home	1212	9	7	3	8	2	4	7	6	10	2	2	72
+bike interaction---work	1377	38	13	5	7	2	7	6	4	3	1	3	45
+car interaction---car interaction	386	275	257	213	193	153	153	129	95	101	80	64	354
+car interaction---home	1174	7	3	0	0	0	1	3	0	0	0	2	3
+car interaction---work	1177	29	8	7	7	6	5	2	2	1	2	1	13
+home---bike interaction	1633	17	14	7	13	5	11	9	8	21	4	4	122
+home---car interaction	1474	8	3	0	0	0	1	3	0	0	0	2	5
+home---work	358	219	296	250	276	212	159	104	88	83	66	67	750
+work---bike interaction	1377	38	13	5	7	2	7	6	4	3	1	3	45
+work---car interaction	1177	29	8	7	7	6	5	2	2	1	2	1	13
+work---home	360	217	285	263	280	209	147	117	96	82	67	52	753
+
+average leg duration: 1815.13699296678 seconds = 00:30:15

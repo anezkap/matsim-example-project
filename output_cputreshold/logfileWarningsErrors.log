@@ -1,24 +1,24 @@
-2026-03-12T08:30:31,575  WARN ConfigConsistencyCheckerImpl:78 scoring.traveling is > 0. This values specifies a utility. Typically, this should be a disutility, i.e. have a negative value.
-2026-03-12T08:30:31,576  WARN ConfigConsistencyCheckerImpl:88 scoring.travelingWalk is > 0. This values specifies a utility. Typically, this should be a disutility, i.e. have a negative value.
-2026-03-12T08:30:37,042  WARN CoordUtils:328 Mix of 2D / 3D coordinates. Assuming 2D only.
+2026-03-12T15:59:13,784  WARN ConfigConsistencyCheckerImpl:78 scoring.traveling is > 0. This values specifies a utility. Typically, this should be a disutility, i.e. have a negative value.
+2026-03-12T15:59:13,784  WARN ConfigConsistencyCheckerImpl:88 scoring.travelingWalk is > 0. This values specifies a utility. Typically, this should be a disutility, i.e. have a negative value.
+2026-03-12T15:59:18,629  WARN CoordUtils:328 Mix of 2D / 3D coordinates. Assuming 2D only.
  This message given only once.
-2026-03-12T08:30:37,042  WARN CoordUtils:328 Mix of 2D / 3D coordinates. Assuming 2D only.
+2026-03-12T15:59:18,629  WARN CoordUtils:328 Mix of 2D / 3D coordinates. Assuming 2D only.
  This message given only once.
-2026-03-12T08:30:37,042  WARN CoordUtils:328 Mix of 2D / 3D coordinates. Assuming 2D only.
+2026-03-12T15:59:18,629  WARN CoordUtils:328 Mix of 2D / 3D coordinates. Assuming 2D only.
  This message given only once.
-2026-03-12T08:30:37,042  WARN CoordUtils:328 Mix of 2D / 3D coordinates. Assuming 2D only.
+2026-03-12T15:59:18,630  WARN CoordUtils:328 Mix of 2D / 3D coordinates. Assuming 2D only.
  This message given only once.
-2026-03-12T08:30:37,042  WARN CoordUtils:328 Mix of 2D / 3D coordinates. Assuming 2D only.
+2026-03-12T15:59:18,630  WARN CoordUtils:328 Mix of 2D / 3D coordinates. Assuming 2D only.
  This message given only once.
-2026-03-12T08:30:58,119  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.055265688370324674 to 0.05636275688066879
-2026-03-12T08:30:58,119  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.021260402248514897 to 0.024055471167980572
-2026-03-12T08:30:58,122  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.032340405505669405 to 0.03488078444961741
-2026-03-12T08:30:58,122  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.032340405505669405 to 0.03488078444961741
-2026-03-12T08:30:58,125  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04185172861700369 to 0.04405851447951032
-2026-03-12T08:30:58,126  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04185172861700369 to 0.04405851447951032
-2026-03-12T08:30:58,126  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.03515452820445508 to 0.03763903611743116
-2026-03-12T08:30:58,127  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.034403956386880194 to 0.03690700770535922
-2026-03-12T08:30:58,127  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.06394778663312707 to 0.06397936309809217
-2026-03-12T08:30:58,127  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.05918980029294009 to 0.0598366413742482
-2026-03-12T08:30:58,127  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04088729523084043 to 0.04314615409885905
-2026-03-12T08:31:11,201  WARN ExpBetaPlanChanger:102 Would make sense to revise this once more.  See comments in code.  kai, nov08
+2026-03-12T15:59:35,524  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.055265688370324674 to 0.05636275688066879
+2026-03-12T15:59:35,525  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.021260402248514897 to 0.024055471167980572
+2026-03-12T15:59:35,527  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.032340405505669405 to 0.03488078444961741
+2026-03-12T15:59:35,527  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.032340405505669405 to 0.03488078444961741
+2026-03-12T15:59:35,530  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04185172861700369 to 0.04405851447951032
+2026-03-12T15:59:35,530  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04185172861700369 to 0.04405851447951032
+2026-03-12T15:59:35,530  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.03515452820445508 to 0.03763903611743116
+2026-03-12T15:59:35,530  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.034403956386880194 to 0.03690700770535922
+2026-03-12T15:59:35,530  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.06394778663312707 to 0.06397936309809217
+2026-03-12T15:59:35,530  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.05918980029294009 to 0.0598366413742482
+2026-03-12T15:59:35,530  WARN QueueWithBuffer:543 storage capacity not sufficient for holes; increasing from 0.04088729523084043 to 0.04314615409885905
+2026-03-12T16:02:56,699  WARN ExpBetaPlanChanger:102 Would make sense to revise this once more.  See comments in code.  kai, nov08

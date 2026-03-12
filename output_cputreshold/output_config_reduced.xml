@@ -19,12 +19,6 @@
 		<!-- userDefinedNetworkAttributeName -->
 		<param name="userDefinedNetworkAttributeName" value="quietness" />
 	</module>
-	<module name="changeMode" >
-		<!-- Defines whether car availability is considered be considered or not. An agent has no car only if it has no license, or never access to a car. Default: true -->
-		<param name="ignoreCarAvailability" value="false" />
-		<!-- Defines all the modes available, including chain-based modes, seperated by commas -->
-		<param name="modes" value="car,bike,pt" />
-	</module>
 	<module name="controller" >
 		<!-- Default=1000. Last Iteration of a simulation. -->
 		<param name="lastIteration" value="20" />
@@ -72,40 +66,40 @@
 	<module name="replanning" >
 		<parameterset type="strategysettings" >
 			<!-- strategyName of strategy.  Possible default names: SelectRandom BestScore KeepLastSelected ChangeExpBeta SelectExpBeta SelectPathSizeLogit      (selectors), ReRouteTimeAllocationMutatorTimeAllocationMutator_ReRouteChangeSingleTripModeChangeTripModeSubtourModeChoice (innovative strategies). -->
-			<param name="strategyName" value="ChangeTripMode" />
+			<param name="strategyName" value="SubtourModeChoice" />
 			<!-- subpopulation to which the strategy applies. "null" refers to the default population, that is, the set of persons for which no explicit subpopulation is defined (ie no subpopulation attribute) -->
-			<param name="subpopulation" value="resident" />
+			<param name="subpopulation" value="short_distance" />
 			<!-- weight of a strategy: for each agent, a strategy will be selected with a probability proportional to its weight -->
 			<param name="weight" value="0.15" />
 		</parameterset>
 		<parameterset type="strategysettings" >
 			<param name="strategyName" value="ChangeExpBeta" />
-			<param name="subpopulation" value="resident" />
+			<param name="subpopulation" value="short_distance" />
 			<param name="weight" value="0.7" />
 		</parameterset>
 		<parameterset type="strategysettings" >
 			<param name="strategyName" value="ReRoute" />
-			<param name="subpopulation" value="resident" />
+			<param name="subpopulation" value="short_distance" />
 			<param name="weight" value="0.1" />
 		</parameterset>
 		<parameterset type="strategysettings" >
 			<param name="strategyName" value="TimeAllocationMutator" />
-			<param name="subpopulation" value="resident" />
+			<param name="subpopulation" value="short_distance" />
 			<param name="weight" value="0.05" />
 		</parameterset>
 		<parameterset type="strategysettings" >
 			<param name="strategyName" value="ChangeExpBeta" />
-			<param name="subpopulation" value="commuter" />
+			<param name="subpopulation" value="long_distance" />
 			<param name="weight" value="0.85" />
 		</parameterset>
 		<parameterset type="strategysettings" >
 			<param name="strategyName" value="ReRoute" />
-			<param name="subpopulation" value="commuter" />
+			<param name="subpopulation" value="long_distance" />
 			<param name="weight" value="0.1" />
 		</parameterset>
 		<parameterset type="strategysettings" >
 			<param name="strategyName" value="TimeAllocationMutator" />
-			<param name="subpopulation" value="resident" />
+			<param name="subpopulation" value="long_distance" />
 			<param name="weight" value="0.05" />
 		</parameterset>
 	</module>
@@ -185,6 +179,10 @@
 				<param name="mode" value="walk" />
 			</parameterset>
 		</parameterset>
+	</module>
+	<module name="subtourModeChoice" >
+		<!-- Defines whether car availability must be considered or not. A agent has no car only if it has no license, or never access to a car -->
+		<param name="considerCarAvailability" value="true" />
 	</module>
 	<module name="travelTimeCalculator" >
 		<!-- (only for backwards compatibility; only used if separateModes==false && + filterModes==true)  Transport modes that will be respected by the travel time collector. 'car' is default which includes also buses from the pt simulation module. -->

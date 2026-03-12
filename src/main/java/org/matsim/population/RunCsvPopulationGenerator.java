@@ -15,6 +15,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RunCsvPopulationGenerator {
 
@@ -63,7 +65,7 @@ public class RunCsvPopulationGenerator {
                 person.getAttributes().putAttribute("has_car", parseBoolean(getRequired(c, idx, "has_car")));
                 person.getAttributes().putAttribute("carAvail", parseBoolean(getRequired(c, idx, "has_car")) ? "always" : "never");
                 person.getAttributes().putAttribute("brussels_resident", parseBoolean(getRequired(c, idx, "brussels_resident")));
-                person.getAttributes().putAttribute("subpopulation", parseBoolean(getRequired(c, idx, "brussels_resident")) ? "resident" : "commuter");
+                person.getAttributes().putAttribute("subpopulation", getRequired(c, idx, "subpopulation"));
 
                 // ---- locations (EPSG:31370, same as network) ----
                 Coord home = new Coord(
@@ -103,6 +105,60 @@ public class RunCsvPopulationGenerator {
                 Activity homeAct2 = pf.createActivityFromCoord("home", home);
                 plan.addActivity(homeAct2);
             }
+
+//            Add my wife as an agent
+            String personId = "KRISTINA";
+
+            Person person = pf.createPerson(Id.create(personId, Person.class));
+            population.addPerson(person);
+
+            // ---- person attributes ----
+            person.getAttributes().putAttribute("sex", "F");
+            person.getAttributes().putAttribute("age", "15-19");
+            person.getAttributes().putAttribute("education", "Lower educated");
+            person.getAttributes().putAttribute("median_income", "22031");
+            person.getAttributes().putAttribute("has_car", false);
+            person.getAttributes().putAttribute("carAvail", "never");
+            person.getAttributes().putAttribute("brussels_resident", true);
+            person.getAttributes().putAttribute("subpopulation", "short_distance");
+
+            // ---- locations (EPSG:31370, same as network) ----
+            Coord home = new Coord(
+                    150390,
+                    171424
+            );
+            Coord work = new Coord(
+                    150042,
+                    170140
+            );
+
+            // ---- times: in seconds since midnight already  ----
+            double depHome_s = 8.5*3600;
+            double depWork_s = 17*3600;
+
+            // ---- mode (car/bike/walk/public transport) ----
+            String mode = "bike";
+
+            // ---- build plan: home -> work -> home ----
+            Plan plan = pf.createPlan();
+            person.addPlan(plan);
+
+            Activity homeAct1 = pf.createActivityFromCoord("home", home);
+            homeAct1.setEndTime(depHome_s);
+            plan.addActivity(homeAct1);
+
+            Leg leg1 = pf.createLeg(mode);
+            plan.addLeg(leg1);
+
+            Activity workAct = pf.createActivityFromCoord("work", work);
+            workAct.setEndTime(depWork_s);
+            plan.addActivity(workAct);
+
+            Leg leg2 = pf.createLeg(mode);
+            plan.addLeg(leg2);
+
+            Activity homeAct2 = pf.createActivityFromCoord("home", home);
+            plan.addActivity(homeAct2);
         }
     }
 
@@ -126,9 +182,28 @@ public class RunCsvPopulationGenerator {
         };
     }
 
+//    private static String[] splitCsvLine(String line) {
+//        // Minimal CSV splitter: OK only if there are no quoted commas in fields.
+//        return line.split("\\s*,\\s*", -1);
+//    }
+
     private static String[] splitCsvLine(String line) {
-        // Minimal CSV splitter: OK only if there are no quoted commas in fields.
-        return line.split("\\s*,\\s*", -1);
+        List<String> tokens = new ArrayList<>();
+        boolean inQuotes = false;
+        StringBuilder current = new StringBuilder();
+
+        for (char c : line.toCharArray()) {
+            if (c == '"') {
+                inQuotes = !inQuotes;
+            } else if (c == ',' && !inQuotes) {
+                tokens.add(current.toString().trim());
+                current = new StringBuilder();
+            } else {
+                current.append(c);
+            }
+        }
+        tokens.add(current.toString().trim());
+        return tokens.toArray(new String[0]);
     }
 
     private static Map<String, Integer> indexByName(String[] header) {

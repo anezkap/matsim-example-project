@@ -61,18 +61,41 @@ class RunPopulationDownsamplingExample {
         app.run();
     }
 
+//    private void run() {
+//
+//        // create an empty scenario using an empty configuration
+//        Scenario scenario = ScenarioUtils.createScenario(ConfigUtils.createConfig());
+//
+//        // the writer will be called by the reader and write the new population file. As parameter the fraction of the
+//        // input population is passed. In our case we will downsize the population to 1%.
+//        StreamingPopulationWriter writer = new StreamingPopulationWriter(0.01);
+//
+//        // the reader will read in an existing population file
+//        StreamingPopulationReader reader = new StreamingPopulationReader(scenario);
+//        reader.addAlgorithm(writer);
+//
+//        try {
+//            writer.startStreaming(outputPopFilename);
+//            reader.readFile(inputPopFilename);
+//        } finally {
+//            writer.closeStreaming();
+//        }
+//    }
+
     private void run() {
+        final String forcedAgentId = "KRISTINA";
+        final double samplingRate = 0.01;
+        final java.util.Random rng = new java.util.Random();
 
-        // create an empty scenario using an empty configuration
         Scenario scenario = ScenarioUtils.createScenario(ConfigUtils.createConfig());
+        StreamingPopulationWriter writer = new StreamingPopulationWriter(1.0); // write all that reach it
 
-        // the writer will be called by the reader and write the new population file. As parameter the fraction of the
-        // input population is passed. In our case we will downsize the population to 1%.
-        StreamingPopulationWriter writer = new StreamingPopulationWriter(0.01);
-
-        // the reader will read in an existing population file
         StreamingPopulationReader reader = new StreamingPopulationReader(scenario);
-        reader.addAlgorithm(writer);
+        reader.addAlgorithm(person -> {
+            if (person.getId().toString().equals(forcedAgentId) || rng.nextDouble() < samplingRate) {
+                writer.writePerson(person);
+            }
+        });
 
         try {
             writer.startStreaming(outputPopFilename);

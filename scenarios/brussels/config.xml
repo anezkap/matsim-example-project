@@ -16,7 +16,8 @@
 
 	<module name="plans">
 <!--		<param name="inputPlansFile" value="population_testing.xml" />-->
-		<param name="inputPlansFile" value="population_1percent_sample.xml.gz" />
+		<param name="inputPlansFile" value="population_active_1percent_sample.xml.gz" />
+		<!--		<param name="inputPlansFile" value="population_1percent_sample.xml.gz" />-->
 <!--		<param name="inputPlansFile" value="population_10percent_sample.xml.gz" />-->
 <!--		<param name="inputPlansFile" value="population_25percent_sample.xml.gz" />-->
 	</module>
@@ -126,22 +127,63 @@
 		</parameterset>
 	</module>
 	
+<!--	<module name="replanning">-->
+<!--		<parameterset type="strategysettings" >-->
+<!--			<param name="strategyName" value="TimeAllocationMutator" />-->
+<!--			<param name="weight" value="0.05" />-->
+<!--		</parameterset>-->
+<!--		<parameterset type="strategysettings" >-->
+<!--			<param name="strategyName" value="ReRoute" />-->
+<!--			<param name="weight" value="0.1" />-->
+<!--		</parameterset>-->
+<!--		<parameterset type="strategysettings" >-->
+<!--			<param name="strategyName" value="ChangeTripMode" />-->
+<!--			<param name="weight" value="0.45" />-->
+<!--		</parameterset>-->
+<!--		<parameterset type="strategysettings" >-->
+<!--			<param name="strategyName" value="ChangeExpBeta" />-->
+<!--			<param name="weight" value="0.4" />-->
+<!--		</parameterset>-->
+<!--	</module>-->
+
 	<module name="replanning">
-		<parameterset type="strategysettings" >
-			<param name="strategyName" value="TimeAllocationMutator" />
-			<param name="weight" value="0.05" />
+		<!-- Residents: normal mode choice -->
+		<parameterset type="strategysettings">
+			<param name="strategyName" value="ChangeTripMode" />
+			<param name="weight" value="0.15" />
+			<param name="subpopulation" value="resident" />
 		</parameterset>
-		<parameterset type="strategysettings" >
+		<parameterset type="strategysettings">
+			<param name="strategyName" value="ChangeExpBeta" />
+			<param name="weight" value="0.7" />
+			<param name="subpopulation" value="resident" />
+		</parameterset>
+		<parameterset type="strategysettings">
 			<param name="strategyName" value="ReRoute" />
 			<param name="weight" value="0.1" />
+			<param name="subpopulation" value="resident" />
 		</parameterset>
-		<parameterset type="strategysettings" >
-			<param name="strategyName" value="ChangeTripMode" />
-			<param name="weight" value="0.45" />
+		<parameterset type="strategysettings">
+			<param name="strategyName" value="TimeAllocationMutator" />
+			<param name="weight" value="0.05" />
+			<param name="subpopulation" value="resident" />
 		</parameterset>
-		<parameterset type="strategysettings" >
+
+		<!-- Commuters: no mode choice, only reroute and scoring -->
+		<parameterset type="strategysettings">
 			<param name="strategyName" value="ChangeExpBeta" />
-			<param name="weight" value="0.4" />
+			<param name="weight" value="0.85" />
+			<param name="subpopulation" value="commuter" />
+		</parameterset>
+		<parameterset type="strategysettings">
+			<param name="strategyName" value="ReRoute" />
+			<param name="weight" value="0.1" />
+			<param name="subpopulation" value="commuter" />
+		</parameterset>
+		<parameterset type="strategysettings">
+			<param name="strategyName" value="TimeAllocationMutator" />
+			<param name="weight" value="0.05" />
+			<param name="subpopulation" value="resident" />
 		</parameterset>
 	</module>
 

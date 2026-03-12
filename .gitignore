@@ -44,3 +44,4 @@ hs_err_pid*
 /src/main/java/org/matsim/population/input/combined_population_active.csv
 /src/main/java/org/matsim/population/output/population.xml.gz
 /scenarios/brussels/population_all.xml.gz
+/src/main/java/org/matsim/population/output/population_active.xml.gz

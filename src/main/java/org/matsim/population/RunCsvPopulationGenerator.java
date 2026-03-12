@@ -63,7 +63,7 @@ public class RunCsvPopulationGenerator {
                 person.getAttributes().putAttribute("has_car", parseBoolean(getRequired(c, idx, "has_car")));
                 person.getAttributes().putAttribute("carAvail", parseBoolean(getRequired(c, idx, "has_car")) ? "always" : "never");
                 person.getAttributes().putAttribute("brussels_resident", parseBoolean(getRequired(c, idx, "brussels_resident")));
-                person.getAttributes().putAttribute("availableModes", getRequired(c, idx, "availableModes"));
+                person.getAttributes().putAttribute("subpopulation", parseBoolean(getRequired(c, idx, "brussels_resident")) ? "resident" : "commuter");
 
                 // ---- locations (EPSG:31370, same as network) ----
                 Coord home = new Coord(

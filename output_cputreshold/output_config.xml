@@ -46,7 +46,7 @@
 		<!-- Default=0. First Iteration of a simulation. -->
 		<param name="firstIteration" value="0" />
 		<!-- Default=1000. Last Iteration of a simulation. -->
-		<param name="lastIteration" value="20" />
+		<param name="lastIteration" value="50" />
 		<!-- Defines in which iterations the legDurations analysis is run (iterationNumber % interval == 0). Use 0 to disable this analysis. -->
 		<param name="legDurationsInterval" value="1" />
 		<!-- Defines in which iterations the legHistogram analysis is run (iterationNumber % interval == 0). Use 0 to disable this analysis. -->
@@ -73,7 +73,7 @@
 		<!-- iterationNumber % writeSnapshotsInterval == 0 defines in which iterations snapshots are written to a file. `0' disables snapshots writing completely -->
 		<param name="writeSnapshotsInterval" value="1" />
 		<!-- iterationNumber % writeEventsInterval == 0 defines in which iterations trips CSV are written to a file. `0' disables trips writing completely. -->
-		<param name="writeTripsInterval" value="50" />
+		<param name="writeTripsInterval" value="10" />
 	</module>
 	<module name="counts" >
 		<!-- Transport modes that will be respected for the counts comparison. 'car' is default, which includes also bussed from the pt simulation module. Use this parameter in combination with 'filterModes' = true! -->

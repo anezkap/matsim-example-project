@@ -21,10 +21,12 @@
 	</module>
 	<module name="controller" >
 		<!-- Default=1000. Last Iteration of a simulation. -->
-		<param name="lastIteration" value="20" />
+		<param name="lastIteration" value="50" />
 		<param name="outputDirectory" value="output_cputreshold" />
 		<!-- Possible values: failIfDirectoryExists,overwriteExistingFiles,deleteDirectoryIfExists -->
 		<param name="overwriteFiles" value="deleteDirectoryIfExists" />
+		<!-- iterationNumber % writeEventsInterval == 0 defines in which iterations trips CSV are written to a file. `0' disables trips writing completely. -->
+		<param name="writeTripsInterval" value="10" />
 	</module>
 	<module name="global" >
 		<param name="coordinateSystem" value="EPSG:31370" />

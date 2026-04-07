@@ -120,7 +120,7 @@
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>
 			<parameterset type="modeParams" >
-				<param name="constant" value="0.0" />
+				<param name="constant" value="0.3" />
 				<param name="dailyMonetaryConstant" value="-5.3" />
 				<param name="dailyUtilityConstant" value="0.0" />
 				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
@@ -138,38 +138,19 @@
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>
 			<parameterset type="modeParams" >
-				<param name="constant" value="0.0" />
+				<param name="constant" value="0.55" />
 				<param name="dailyMonetaryConstant" value="0.0" />
 				<param name="dailyUtilityConstant" value="0.0" />
 				<param name="marginalUtilityOfDistance_util_m" value="-0.0002" />
-				<param name="marginalUtilityOfTraveling_util_hr" value="-3.5" />
+				<param name="marginalUtilityOfTraveling_util_hr" value="0.5" />
 				<param name="mode" value="walk" />
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>
 		</parameterset>
 	</module>
-	
-<!--	<module name="replanning">-->
-<!--		<parameterset type="strategysettings" >-->
-<!--			<param name="strategyName" value="TimeAllocationMutator" />-->
-<!--			<param name="weight" value="0.05" />-->
-<!--		</parameterset>-->
-<!--		<parameterset type="strategysettings" >-->
-<!--			<param name="strategyName" value="ReRoute" />-->
-<!--			<param name="weight" value="0.1" />-->
-<!--		</parameterset>-->
-<!--		<parameterset type="strategysettings" >-->
-<!--			<param name="strategyName" value="ChangeTripMode" />-->
-<!--			<param name="weight" value="0.45" />-->
-<!--		</parameterset>-->
-<!--		<parameterset type="strategysettings" >-->
-<!--			<param name="strategyName" value="ChangeExpBeta" />-->
-<!--			<param name="weight" value="0.4" />-->
-<!--		</parameterset>-->
-<!--	</module>-->
 
 	<module name="replanning">
-		<param name="fractionOfIterationsToDisableInnovation" value="0.8" />
+		<param name="fractionOfIterationsToDisableInnovation" value="0.95" />
 
 		<!-- Short distance: full mode choice -->
 		<parameterset type="strategysettings">

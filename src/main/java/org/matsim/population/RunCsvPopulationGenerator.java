@@ -22,9 +22,14 @@ public class RunCsvPopulationGenerator {
 
     public static void main(String[] args) throws IOException {
 //        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population.csv");
-        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population_active.csv");
-//        Path out = Path.of("src/main/java/org/matsim/population/output/population.xml.gz");
-        Path out = Path.of("src/main/java/org/matsim/population/output/population_active.xml.gz");
+//        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population_active.csv");
+//        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population_active_company_car.csv");
+        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population_active_1903.csv");
+
+        //        Path out = Path.of("src/main/java/org/matsim/population/output/population.xml.gz");
+//        Path out = Path.of("src/main/java/org/matsim/population/output/population_active.xml.gz");
+//        Path out = Path.of("src/main/java/org/matsim/population/output/population_active_company_car.xml.gz");
+        Path out = Path.of("src/main/java/org/matsim/population/output/population_active_1903.xml.gz");
 
         Scenario scenario = ScenarioUtils.createScenario(ConfigUtils.createConfig());
         createPopulationFromCsv(scenario, csv);

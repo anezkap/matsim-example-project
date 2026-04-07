@@ -46,3 +46,12 @@ hs_err_pid*
 /scenarios/brussels/population_all.xml.gz
 /src/main/java/org/matsim/population/output/population_active.xml.gz
 /output_cputreshold/ITERS/
+/scenarios/brussels/population_active_10percent_sample.xml.gz
+/scenarios/brussels/population_active_25percent_sample.xml.gz
+/scenarios/brussels/population_active_cc_10percent_sample.xml.gz
+/src/main/java/org/matsim/population/input/combined_population_active_1903.csv
+/src/main/java/org/matsim/population/input/combined_population_active_company_car.csv
+/scenarios/brussels/population_active_1903_10percent_sample.xml.gz
+
+
+/output_*

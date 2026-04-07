@@ -28,6 +28,7 @@ import org.matsim.contrib.bicycle.AdditionalBicycleLinkScoreDefaultImpl;
 import org.matsim.contrib.bicycle.BicycleConfigGroup;
 import org.matsim.contrib.bicycle.BicycleModule;
 import org.matsim.contrib.bicycle.run.RunBicycleExample;
+import org.matsim.contrib.otfvis.OTFVisLiveModule;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.ConfigUtils;
 import org.matsim.core.config.groups.QSimConfigGroup;

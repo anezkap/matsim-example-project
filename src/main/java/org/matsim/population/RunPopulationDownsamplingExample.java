@@ -44,8 +44,12 @@ class RunPopulationDownsamplingExample {
 
 //        String inputPopFilename = "src/main/java/org/matsim/population/output/population.xml.gz";
 //        String outputPopFilename = "src/main/java/org/matsim/population/output/population_1percent_sample.xml.gz";
-        String inputPopFilename = "src/main/java/org/matsim/population/output/population_active.xml.gz";
-        String outputPopFilename = "src/main/java/org/matsim/population/output/population_active_1percent_sample.xml.gz";
+//        String inputPopFilename = "src/main/java/org/matsim/population/output/population_active.xml.gz";
+//        String outputPopFilename = "src/main/java/org/matsim/population/output/population_active_25percent_sample.xml.gz";
+//        String inputPopFilename = "src/main/java/org/matsim/population/output/population_active_company_car.xml.gz";
+//        String outputPopFilename = "src/main/java/org/matsim/population/output/population_active_cc_10percent_sample.xml.gz";
+        String inputPopFilename = "src/main/java/org/matsim/population/output/population_active_1903.xml.gz";
+        String outputPopFilename = "src/main/java/org/matsim/population/output/population_active_1903_5percent_sample.xml.gz";
 
 //        if ( args!=null ) {
 //            if (args.length != 2) {
@@ -84,7 +88,7 @@ class RunPopulationDownsamplingExample {
 
     private void run() {
         final String forcedAgentId = "KRISTINA";
-        final double samplingRate = 0.01;
+        final double samplingRate = 0.05;
         final java.util.Random rng = new java.util.Random();
 
         Scenario scenario = ScenarioUtils.createScenario(ConfigUtils.createConfig());

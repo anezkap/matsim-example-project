@@ -84,12 +84,12 @@ public class RunMatsim{
 		// possibly modify controler here
 
 		controler.addOverridingModule(new BicycleModule() );
-//		controler.addOverridingModule( new AbstractModule(){
-//			@Override public void install(){
-//				this.bind( AdditionalBicycleLinkScoreDefaultImpl.class ); // so it can be used as delegate
-//				this.bind( AdditionalBicycleLinkScore.class ).to( MyAdditionalBicycleLinkScore.class );
-//			}
-//		} );
+		controler.addOverridingModule( new AbstractModule(){
+			@Override public void install(){
+				this.bind( AdditionalBicycleLinkScoreDefaultImpl.class ); // so it can be used as delegate
+				this.bind( AdditionalBicycleLinkScore.class ).to( MyAdditionalBicycleLinkScore.class );
+			}
+		} );
 
 //		controler.addOverridingModule( new OTFVisLiveModule() ) ;
 
@@ -106,19 +106,17 @@ public class RunMatsim{
 		private AdditionalBicycleLinkScoreDefaultImpl delegate;
 
 		@Override public double computeLinkBasedScore( Link link ){
-			double link_length = (double) link.getAttributes().getAttribute( "length" );
+			double link_length = (double) link.getLength();
 
-//			double biking_allowance_per_km = 0.37;
+			double biking_allowance_per_km = 0.37;
 //			double biking_allowance_per_km = 0.0;
 
 //			change from m to km and multiply by the biking allowance constant
-//			double biking_allowance = (link_length / 1000) * biking_allowance_per_km;
+			double biking_allowance = (link_length / 1000) * biking_allowance_per_km;
 
 			double amount = delegate.computeLinkBasedScore( link );
 
-//			return amount + biking_allowance;  // or some other way to augment the score
-
-			return amount;
+			return amount + biking_allowance;  // or some other way to augment the score
 
 		}
 	}

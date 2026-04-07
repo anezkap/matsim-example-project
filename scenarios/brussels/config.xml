@@ -42,7 +42,7 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_testing_duration_v10" />
+		<param name="outputDirectory" value="output_testing_duration_v12" />
 		<param name="lastIteration" value="80" />
 		<param name="writeEventsInterval" value="20" />
 		<param name="writeTripsInterval" value="20" />
@@ -50,7 +50,7 @@
 
 	<module name="routing" >
 		<param name="accessEgressType" value="accessEgressModeToLink" />
-		<param name="networkModes" value="car,bike" />
+		<param name="networkModes" value="car,bicycle" />
 		<param name="clearDefaultTeleportedModeParams" value="true" />
 		<parameterset type="teleportedModeParameters" >
 			<param name="beelineDistanceFactor" value="1.3" />
@@ -67,7 +67,7 @@
 	</module>
 
 	<module name="qsim" >
-		<param name="mainMode" value="car,bike" />
+		<param name="mainMode" value="car,bicycle" />
 		<param name="linkDynamics" value="PassingQ" />
 		<param name="usePersonIdForMissingVehicleId" value="false" />
 		<param name="numberOfThreads" value="5" />
@@ -116,7 +116,7 @@
 				<param name="dailyUtilityConstant" value="0.0" />
 				<param name="marginalUtilityOfDistance_util_m" value="-0.0006" />
 				<param name="marginalUtilityOfTraveling_util_hr" value="-1.0" />
-				<param name="mode" value="bike" />
+				<param name="mode" value="bicycle" />
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>
 			<parameterset type="modeParams" >
@@ -210,33 +210,25 @@
 	</module>
 
 	<module name="subtourModeChoice">
-		<param name="modes" value="car,pt,bike,walk" />
-		<param name="chainBasedModes" value="car,bike" />
+		<param name="modes" value="car,pt,bicycle,walk" />
+		<param name="chainBasedModes" value="car,bicycle" />
 		<param name="considerCarAvailability" value="true" />
 	</module>
 
 	<module name="bicycle" >
-		<param name="bicycleMode" value="bike" />
+		<param name="bicycleMode" value="bicycle" />
 		<!-- marginalUtilityOfSurfacetype -->
 		<param name="marginalUtilityOfComfort_m" value="-2.0E-4" />
 		<!-- marginalUtilityOfGradient -->
 		<param name="marginalUtilityOfGradient_m_100m" value="-0.02" />
 		<!-- marginalUtilityOfStreettype -->
 		<param name="marginalUtilityOfInfrastructure_m" value="-2.0E-4" />
-		<!-- marginalUtilityOfUserDefinedNetworkAttribute -->
-		<param name="marginalUtilityOfUserDefinedNetworkAttribute_m" value="-0.0" />
 		<!-- maxBicycleSpeed -->
-		<param name="maxBicycleSpeedForRouting" value="4.16666666" />
-<!--		<param name="maxBicycleSpeedForRouting" value="5.5555556" />-->
 		<param name="motorizedInteraction" value="false" />
-		<!-- userDefinedNetworkAttributeDefaultValue -->
-		<param name="userDefinedNetworkAttributeDefaultValue" value="0.1" />
-		<!-- userDefinedNetworkAttributeName -->
-		<param name="userDefinedNetworkAttributeName" value="quietness" />
 	</module>
 
 	<module name="travelTimeCalculator" >
-		<param name="analyzedModes" value="car,bike" />
+		<param name="analyzedModes" value="car,bicycle" />
 		<param name="separateModes" value="true" />
 	</module>
 

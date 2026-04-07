@@ -20,11 +20,11 @@
 		<plan selected="yes">
 			<activity type="home" x="157151.2710116572" y="177617.97481705807" z="0.0" end_time="08:30:00" >
 			</activity>
-			<leg mode="bike">
+			<leg mode="bicycle">
 			</leg>
 			<activity type="work" x="146502.05943999998" y="167066.07919998" z="0.0" end_time="17:30:00" start_time="08:45:00">
 			</activity>
-			<leg mode="bike">
+			<leg mode="bicycle">
 			</leg>
 			<activity type="home" x="157151.2710116572" y="177617.97481705807" z="0.0">
 			</activity>

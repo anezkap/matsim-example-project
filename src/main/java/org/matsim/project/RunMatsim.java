@@ -23,11 +23,12 @@ import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.api.core.v01.TransportMode;
 import org.matsim.api.core.v01.network.Link;
-import org.matsim.contrib.bicycle.AdditionalBicycleLinkScore;
-import org.matsim.contrib.bicycle.AdditionalBicycleLinkScoreDefaultImpl;
-import org.matsim.contrib.bicycle.BicycleConfigGroup;
-import org.matsim.contrib.bicycle.BicycleModule;
-import org.matsim.contrib.bicycle.run.RunBicycleExample;
+import org.matsim.contrib.bicycle.*;
+//import org.matsim.contrib.bicycle.AdditionalBicycleLinkScore;
+//import org.matsim.contrib.bicycle.AdditionalBicycleLinkScoreDefaultImpl;
+//import org.matsim.contrib.bicycle.BicycleConfigGroup;
+//import org.matsim.contrib.bicycle.BicycleModule;
+//import org.matsim.contrib.bicycle.run.RunBicycleExample;
 import org.matsim.contrib.otfvis.OTFVisLiveModule;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.ConfigUtils;
@@ -36,6 +37,7 @@ import org.matsim.core.controler.AbstractModule;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy.OverwriteFileSetting;
 import org.matsim.core.scenario.ScenarioUtils;
+import org.matsim.vehicles.Vehicle;
 import org.matsim.vehicles.VehicleType;
 import org.matsim.vehicles.VehicleUtils;
 import org.matsim.vehicles.VehiclesFactory;
@@ -77,7 +79,7 @@ public class RunMatsim{
 		// now put the mode vehicles into the vehicles data:
 		final VehiclesFactory vf = VehicleUtils.getFactory();
 		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create(TransportMode.car, VehicleType.class ) ) );
-		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create("bike", VehicleType.class ) ).setMaximumVelocity(4.16666666 ).setPcuEquivalents(0.05 ).setLength(1.5) );
+		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create(bicycle, VehicleType.class ) ).setNetworkMode(bicycle).setMaximumVelocity(4.16666666 ).setPcuEquivalents(0.05 ).setLength(1.5) );
 
 		Controler controler = new Controler( scenario ) ;
 		
@@ -102,22 +104,22 @@ public class RunMatsim{
 
 	private static class MyAdditionalBicycleLinkScore implements AdditionalBicycleLinkScore {
 
-		@Inject
-		private AdditionalBicycleLinkScoreDefaultImpl delegate;
+		@Inject private AdditionalBicycleLinkScoreDefaultImpl delegate;
 
-		@Override public double computeLinkBasedScore( Link link ){
+		@Override public double computeLinkBasedScore( Link link, Id<Vehicle> vehicleId, String bicycleMode  ){
 			double link_length = (double) link.getLength();
 
-			double biking_allowance_per_km = 0.37;
-//			double biking_allowance_per_km = 0.0;
+//			double biking_allowance_per_km = 0.37;
+			double biking_allowance_per_km = 0.0;
 
 //			change from m to km and multiply by the biking allowance constant
 			double biking_allowance = (link_length / 1000) * biking_allowance_per_km;
 
-			double amount = delegate.computeLinkBasedScore( link );
+			double amount = delegate.computeLinkBasedScore( link, vehicleId, bicycleMode );
 
 			return amount + biking_allowance;  // or some other way to augment the score
 
 		}
 	}
+
 }

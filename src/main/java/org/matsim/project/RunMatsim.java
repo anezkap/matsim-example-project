@@ -106,12 +106,14 @@ public class RunMatsim{
 		private AdditionalBicycleLinkScoreDefaultImpl delegate;
 
 		@Override public double computeLinkBasedScore( Link link ){
-//			double result = (double) link.getAttributes().getAttribute( "allowed_speed" );  // TODO: just testing something, use actual attribute
+			double link_length = (double) link.getAttributes().getAttribute( "length" );
+
+//			change from m to km and multiply by the biking allowance constant
+			double biking_allowance = link_length / 1000 * 0.35;
 
 			double amount = delegate.computeLinkBasedScore( link );
 
-//			return amount + result ;  // or some other way to augment the score
-			return amount;
+			return amount + biking_allowance;  // or some other way to augment the score
 
 		}
 	}

@@ -14,9 +14,9 @@
 	</module>
 
 <!--	Testing random counts, not real data yet-->
-	<module name="counts" >
-		<param name="inputCountsFile" value="counts.xml" />
-	</module>
+<!--	<module name="counts" >-->
+<!--		<param name="inputCountsFile" value="counts.xml" />-->
+<!--	</module>-->
 
 	<module name="plans">
 <!--		<param name="inputPlansFile" value="population_testing.xml" />-->
@@ -32,25 +32,30 @@
 
 <!--		Testing scoring with one agent only-->
 		<param name="inputPlansFile" value="population_1_person.xml" />
+
+
+<!--		0904 new version of population-->
+<!--		<param name="inputPlansFile" value="population_active_0904_5percent_sample.xml.gz" />-->
 	</module>
 
 	<module name="linkStats" >
 		<!-- Specifies over how many iterations the link volumes should be averaged that are used for the link statistics. Use 1 or 0 to only use the link volumes of a single iteration. This values cannot be larger than the value specified for writeLinkStatsInterval -->
 		<param name="averageLinkStatsOverIterations" value="5" />
 		<!-- Specifies how often the link stats should be calculated and written. Use 0 to disable the generation of link stats. -->
-		<param name="writeLinkStatsInterval" value="20" />
+		<param name="writeLinkStatsInterval" value="10" />
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_testing_duration_v12" />
-		<param name="lastIteration" value="80" />
-		<param name="writeEventsInterval" value="20" />
-		<param name="writeTripsInterval" value="20" />
+		<param name="outputDirectory" value="output_0904_v3" />
+		<param name="lastIteration" value="150" />
+		<param name="writeEventsInterval" value="10" />
+		<param name="writePlansInterval" value="10" />
+		<param name="writeTripsInterval" value="10" />
 	</module>
 
 	<module name="routing" >
 		<param name="accessEgressType" value="accessEgressModeToLink" />
-		<param name="networkModes" value="car,bicycle" />
+		<param name="networkModes" value="car,bike" />
 		<param name="clearDefaultTeleportedModeParams" value="true" />
 		<parameterset type="teleportedModeParameters" >
 			<param name="beelineDistanceFactor" value="1.3" />
@@ -67,7 +72,7 @@
 	</module>
 
 	<module name="qsim" >
-		<param name="mainMode" value="car,bicycle" />
+		<param name="mainMode" value="car,bike" />
 		<param name="linkDynamics" value="PassingQ" />
 		<param name="usePersonIdForMissingVehicleId" value="false" />
 		<param name="numberOfThreads" value="5" />
@@ -116,7 +121,7 @@
 				<param name="dailyUtilityConstant" value="0.0" />
 				<param name="marginalUtilityOfDistance_util_m" value="-0.0006" />
 				<param name="marginalUtilityOfTraveling_util_hr" value="-1.0" />
-				<param name="mode" value="bicycle" />
+				<param name="mode" value="bike" />
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>
 			<parameterset type="modeParams" >
@@ -138,11 +143,11 @@
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>
 			<parameterset type="modeParams" >
-				<param name="constant" value="0.55" />
+				<param name="constant" value="0.0" />
 				<param name="dailyMonetaryConstant" value="0.0" />
 				<param name="dailyUtilityConstant" value="0.0" />
 				<param name="marginalUtilityOfDistance_util_m" value="-0.0002" />
-				<param name="marginalUtilityOfTraveling_util_hr" value="0.5" />
+				<param name="marginalUtilityOfTraveling_util_hr" value="0.0" />
 				<param name="mode" value="walk" />
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>
@@ -210,13 +215,13 @@
 	</module>
 
 	<module name="subtourModeChoice">
-		<param name="modes" value="car,pt,bicycle,walk" />
-		<param name="chainBasedModes" value="car,bicycle" />
+		<param name="modes" value="car,pt,bike,walk" />
+		<param name="chainBasedModes" value="car,bike" />
 		<param name="considerCarAvailability" value="true" />
 	</module>
 
 	<module name="bicycle" >
-		<param name="bicycleMode" value="bicycle" />
+		<param name="bicycleMode" value="bike" />
 		<!-- marginalUtilityOfSurfacetype -->
 		<param name="marginalUtilityOfComfort_m" value="-2.0E-4" />
 		<!-- marginalUtilityOfGradient -->
@@ -228,7 +233,7 @@
 	</module>
 
 	<module name="travelTimeCalculator" >
-		<param name="analyzedModes" value="car,bicycle" />
+		<param name="analyzedModes" value="car,bike" />
 		<param name="separateModes" value="true" />
 	</module>
 

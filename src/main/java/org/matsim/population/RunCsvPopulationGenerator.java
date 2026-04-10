@@ -24,12 +24,13 @@ public class RunCsvPopulationGenerator {
 //        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population.csv");
 //        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population_active.csv");
 //        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population_active_company_car.csv");
-        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population_active_1903.csv");
+//        Path csv = Path.of("src/main/java/org/matsim/population/input/combined_population_active_1903.csv");
+        Path csv = Path.of("src/main/java/org/matsim/population/input/all_active_workers_final.csv");
 
         //        Path out = Path.of("src/main/java/org/matsim/population/output/population.xml.gz");
 //        Path out = Path.of("src/main/java/org/matsim/population/output/population_active.xml.gz");
 //        Path out = Path.of("src/main/java/org/matsim/population/output/population_active_company_car.xml.gz");
-        Path out = Path.of("src/main/java/org/matsim/population/output/population_active_1903.xml.gz");
+        Path out = Path.of("src/main/java/org/matsim/population/output/all_active_workers_final_0904.xml.gz");
 
         Scenario scenario = ScenarioUtils.createScenario(ConfigUtils.createConfig());
         createPopulationFromCsv(scenario, csv);
@@ -66,10 +67,13 @@ public class RunCsvPopulationGenerator {
                 person.getAttributes().putAttribute("sex", getRequired(c, idx, "sex"));
                 person.getAttributes().putAttribute("age", getRequired(c, idx, "age"));
                 person.getAttributes().putAttribute("education", getRequired(c, idx, "education"));
+                person.getAttributes().putAttribute("industry", getRequired(c, idx, "industry"));
+                person.getAttributes().putAttribute("home_municipality", getRequired(c, idx, "home_municipality"));
                 person.getAttributes().putAttribute("median_income", parseNullableDouble(getRequired(c, idx, "median_income")));
                 person.getAttributes().putAttribute("has_car", parseBoolean(getRequired(c, idx, "has_car")));
                 person.getAttributes().putAttribute("carAvail", parseBoolean(getRequired(c, idx, "has_car")) ? "always" : "never");
-                person.getAttributes().putAttribute("brussels_resident", parseBoolean(getRequired(c, idx, "brussels_resident")));
+                person.getAttributes().putAttribute("lives_in_brussels", getRequired(c, idx, "lives_in_brussels"));
+                person.getAttributes().putAttribute("works_in_brussels", getRequired(c, idx, "works_in_brussels"));
                 person.getAttributes().putAttribute("subpopulation", getRequired(c, idx, "subpopulation"));
 
                 // ---- locations (EPSG:31370, same as network) ----
@@ -82,12 +86,12 @@ public class RunCsvPopulationGenerator {
                         parseDouble(getRequired(c, idx, "work_y"))
                 );
 
-                // ---- times: in seconds since midnight already  ----
-                double depHome_s = parseSecondsSinceMidnight(getRequired(c, idx, "departure_time_home"));
-                double depWork_s = parseSecondsSinceMidnight(getRequired(c, idx, "departure_time_work"));
+                // ---- times: in minutes since midnight already  ----
+                double depHome_s = parseMinutesSinceMidnight(getRequired(c, idx, "departure_home_to_work"));
+                double depWork_s = parseMinutesSinceMidnight(getRequired(c, idx, "departure_from_work"));
 
                 // ---- mode (car/bike/walk/public transport) ----
-                String mode = normalizeMode(getRequired(c, idx, "matsim_mode"));
+                String mode = normalizeMode(getRequired(c, idx, "assigned_mode"));
 
                 // ---- build plan: home -> work -> home ----
                 Plan plan = pf.createPlan();
@@ -169,8 +173,8 @@ public class RunCsvPopulationGenerator {
 
     // -------- helpers --------
 
-    private static double parseSecondsSinceMidnight(String raw) {
-        return Double.parseDouble(raw.trim());
+    private static double parseMinutesSinceMidnight(String raw) {
+        return Double.parseDouble(raw.trim()) * 60;
     }
 
     private static String normalizeMode(String raw) {

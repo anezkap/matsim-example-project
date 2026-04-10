@@ -34,4 +34,33 @@
 
 <!-- ====================================================================== -->
 
+	<person id="p370142">
+		<attributes>
+			<attribute name="age" class="java.lang.String">45-49</attribute>
+			<attribute name="carAvail" class="java.lang.String">always</attribute>
+			<attribute name="education" class="java.lang.String">ISCED11_1</attribute>
+			<attribute name="has_car" class="java.lang.Boolean">true</attribute>
+			<attribute name="home_municipality" class="java.lang.String">21002</attribute>
+			<attribute name="industry" class="java.lang.String">R-U</attribute>
+			<attribute name="lives_in_brussels" class="java.lang.String">True</attribute>
+			<attribute name="median_income" class="java.lang.Double">31075.0</attribute>
+			<attribute name="sex" class="java.lang.String">F</attribute>
+			<attribute name="subpopulation" class="java.lang.String">short_distance</attribute>
+			<attribute name="works_in_brussels" class="java.lang.String">False</attribute>
+		</attributes>
+		<plan selected="yes">
+			<activity type="home" x="155020.239" y="166195.479" end_time="10:00:00" >
+			</activity>
+			<leg mode="car">
+			</leg>
+			<activity type="work" x="165664.59508577222" y="155195.04327106234" end_time="16:00:00" >
+			</activity>
+			<leg mode="car">
+			</leg>
+			<activity type="home" x="155020.239" y="166195.479" >
+			</activity>
+		</plan>
+
+	</person>
+
 </population>

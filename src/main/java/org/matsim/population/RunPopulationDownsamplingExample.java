@@ -48,8 +48,10 @@ class RunPopulationDownsamplingExample {
 //        String outputPopFilename = "src/main/java/org/matsim/population/output/population_active_25percent_sample.xml.gz";
 //        String inputPopFilename = "src/main/java/org/matsim/population/output/population_active_company_car.xml.gz";
 //        String outputPopFilename = "src/main/java/org/matsim/population/output/population_active_cc_10percent_sample.xml.gz";
-        String inputPopFilename = "src/main/java/org/matsim/population/output/population_active_1903.xml.gz";
-        String outputPopFilename = "src/main/java/org/matsim/population/output/population_active_1903_5percent_sample.xml.gz";
+//        String inputPopFilename = "src/main/java/org/matsim/population/output/population_active_1903.xml.gz";
+//        String outputPopFilename = "src/main/java/org/matsim/population/output/population_active_1903_5percent_sample.xml.gz";
+        String inputPopFilename = "src/main/java/org/matsim/population/output/all_active_workers_final_0904.xml.gz";
+        String outputPopFilename = "src/main/java/org/matsim/population/output/population_active_0904_5percent_sample.xml.gz";
 
 //        if ( args!=null ) {
 //            if (args.length != 2) {

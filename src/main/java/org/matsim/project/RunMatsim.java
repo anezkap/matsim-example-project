@@ -63,7 +63,7 @@ public class RunMatsim{
 
 		config.routing().setRoutingRandomness(3.);
 
-		config.qsim().setPcuThresholdForFlowCapacityEasing(0.5);
+		config.qsim().setPcuThresholdForFlowCapacityEasing(0.25);
 
 		BicycleConfigGroup bicycleConfigGroup = ConfigUtils.addOrGetModule( config, BicycleConfigGroup.class );
 

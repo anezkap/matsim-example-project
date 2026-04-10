@@ -55,3 +55,8 @@ hs_err_pid*
 
 
 /output_*
+/src/main/java/org/matsim/population/input/all_active_workers_final.csv
+/scenarios/brussels/population_active_0904_5percent_sample.xml
+/scenarios/brussels/population_active_0904_5percent_sample.xml.gz
+/src/main/java/org/matsim/population/output/all_active_workers_final_0904.xml.gz
+/src/main/java/org/matsim/population/output/population_active_0904_5percent_sample.xml.gz

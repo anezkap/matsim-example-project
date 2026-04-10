@@ -31,11 +31,12 @@
 <!--		<param name="inputPlansFile" value="population_active_25percent_sample.xml.gz" />-->
 
 <!--		Testing scoring with one agent only-->
-		<param name="inputPlansFile" value="population_1_person.xml" />
+<!--		<param name="inputPlansFile" value="population_1_person.xml" />-->
 
 
 <!--		0904 new version of population-->
 <!--		<param name="inputPlansFile" value="population_active_0904_5percent_sample.xml.gz" />-->
+				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />
 	</module>
 
 	<module name="linkStats" >
@@ -46,8 +47,8 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_0904_v3" />
-		<param name="lastIteration" value="150" />
+		<param name="outputDirectory" value="output_0904_v4" />
+		<param name="lastIteration" value="100" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />
 		<param name="writeTripsInterval" value="10" />
@@ -84,12 +85,12 @@
 
 <!--				Use x% sample, storage is set to x^0.75 -->
 <!--		1%-->
-<!--		<param name="flowCapacityFactor" value="0.01" />-->
-<!--		<param name="storageCapacityFactor" value="0.0316" />-->
+		<param name="flowCapacityFactor" value="0.01" />
+		<param name="storageCapacityFactor" value="0.0316" />
 
 <!--		5%-->
-			<param name="flowCapacityFactor" value="0.05" />
-			<param name="storageCapacityFactor" value="0.106" />
+<!--			<param name="flowCapacityFactor" value="0.05" />-->
+<!--			<param name="storageCapacityFactor" value="0.106" />-->
 
 <!--		10%-->
 <!--		<param name="flowCapacityFactor" value="0.1" />-->

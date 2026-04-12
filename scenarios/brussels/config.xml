@@ -47,7 +47,7 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_0904_v7" />
+		<param name="outputDirectory" value="output_0904_v8" />
 		<param name="lastIteration" value="100" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />
@@ -227,7 +227,7 @@
 		<!-- marginalUtilityOfSurfacetype -->
 		<param name="marginalUtilityOfComfort_m" value="0.0" />
 		<!-- marginalUtilityOfGradient -->
-		<param name="marginalUtilityOfGradient_m_100m" value="0.0" />
+		<param name="marginalUtilityOfGradient_m_100m" value="-0.00006" />
 		<!-- marginalUtilityOfStreettype -->
 		<param name="marginalUtilityOfInfrastructure_m" value="0.0" />
 		<!-- maxBicycleSpeed -->

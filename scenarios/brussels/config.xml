@@ -47,7 +47,7 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_0904_v5" />
+		<param name="outputDirectory" value="output_0904_v6" />
 		<param name="lastIteration" value="100" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />
@@ -104,33 +104,34 @@
 	<module name="scoring">
 		<param name="lateArrival" value="-18" />
 		<param name="performing" value="+6" />
+		<param name="writeExperiencedPlans" value="true" />
 		<parameterset type="scoringParameters" >
 			<parameterset type="activityParams" >
 				<param name="activityType"            value="home" />
-				<param name="typicalDuration" value="12:00:00" />
+				<param name="typicalDuration" value="14:00:00" />
 			</parameterset>
 			<parameterset type="activityParams" >
 				<param name="activityType"            value="work" />
 				<param name="typicalDuration" value="08:30:00" />
 				<param name="openingTime"     value="07:00:00" />
-				<param name="latestStartTime" value="09:00:00" />
+				<param name="latestStartTime" value="09:15:00" />
 				<param name="closingTime"     value="18:00:00" />
 			</parameterset>
 			<parameterset type="modeParams" >
-				<param name="constant" value="-2.2" />
-				<param name="dailyMonetaryConstant" value="-1.0" />
+				<param name="constant" value="-1.1" />
+				<param name="dailyMonetaryConstant" value="-0.5" />
 				<param name="dailyUtilityConstant" value="0.0" />
-				<param name="marginalUtilityOfDistance_util_m" value="-0.0006" />
-				<param name="marginalUtilityOfTraveling_util_hr" value="-1.0" />
+				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+				<param name="marginalUtilityOfTraveling_util_hr" value="0.0" />
 				<param name="mode" value="bike" />
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>
 			<parameterset type="modeParams" >
-				<param name="constant" value="0.3" />
+				<param name="constant" value="0.0" />
 				<param name="dailyMonetaryConstant" value="-5.3" />
 				<param name="dailyUtilityConstant" value="0.0" />
 				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
-				<param name="marginalUtilityOfTraveling_util_hr" value="2.0" />
+				<param name="marginalUtilityOfTraveling_util_hr" value="0.0" />
 				<param name="mode" value="car" />
 				<param name="monetaryDistanceRate" value="-0.0001" />
 			</parameterset>
@@ -139,7 +140,7 @@
 				<param name="dailyMonetaryConstant" value="-1.5" />
 				<param name="dailyUtilityConstant" value="0.0" />
 				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
-				<param name="marginalUtilityOfTraveling_util_hr" value="-3.5" />
+				<param name="marginalUtilityOfTraveling_util_hr" value="0.0" />
 				<param name="mode" value="pt" />
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>
@@ -147,8 +148,8 @@
 				<param name="constant" value="0.0" />
 				<param name="dailyMonetaryConstant" value="0.0" />
 				<param name="dailyUtilityConstant" value="0.0" />
-				<param name="marginalUtilityOfDistance_util_m" value="-0.0006" />
-				<param name="marginalUtilityOfTraveling_util_hr" value="-3.5" />
+				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+				<param name="marginalUtilityOfTraveling_util_hr" value="0.0" />
 				<param name="mode" value="walk" />
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>

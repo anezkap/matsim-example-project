@@ -79,7 +79,8 @@ public class RunMatsim{
 		// now put the mode vehicles into the vehicles data:
 		final VehiclesFactory vf = VehicleUtils.getFactory();
 		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create(TransportMode.car, VehicleType.class ) ) );
-		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create(bicycle, VehicleType.class ) ).setNetworkMode(bicycle).setMaximumVelocity(4.16666666 ).setPcuEquivalents(0.05 ).setLength(1.5) );
+		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create(bicycle, VehicleType.class ) ).setNetworkMode(bicycle).setMaximumVelocity(5 ).setPcuEquivalents(0.05 ).setLength(1.5) );
+//		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create(bicycle, VehicleType.class ) ).setNetworkMode(bicycle).setMaximumVelocity(4.16666666 ).setPcuEquivalents(0.05 ).setLength(1.5) );
 
 		Controler controler = new Controler( scenario ) ;
 		

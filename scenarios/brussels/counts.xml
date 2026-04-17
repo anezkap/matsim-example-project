@@ -1,30 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<counts name="tunnelXXXX" desc="count for tunnel XXXX" year="2017" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://matsim.org/files/dtd/counts_v1.xsd">
-    <count loc_id="9990611240002f" cs_id="handmade_01">
+<counts name="traffic_counts" desc="Counts for different streets" year="2025" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://matsim.org/files/dtd/counts_v1.xsd">
+<!--    cars - telraam -->
+    <count loc_id="1264943000008f" cs_id="palokestraat">
         <volume h="1" val="0" />
         <volume h="2" val="0" />
         <volume h="3" val="0" />
         <volume h="4" val="0" />
         <volume h="5" val="0" />
         <volume h="6" val="0" />
-        <volume h="7" val="11.1" />
+        <volume h="7" val="52" />
+        <volume h="8" val="113" />
+        <volume h="9" val="109" />
+        <volume h="10" val="61" />
+        <volume h="11" val="31" />
+        <volume h="12" val="46" />
+        <volume h="13" val="57" />
+        <volume h="14" val="58" />
+        <volume h="15" val="67" />
+        <volume h="16" val="115" />
+        <volume h="17" val="168" />
+        <volume h="18" val="170" />
+        <volume h="19" val="158" />
+        <volume h="20" val="65" />
+        <volume h="21" val="54" />
+        <volume h="22" val="0" />
+        <volume h="23" val="0" />
+        <volume h="24" val="0" />
+    </count>
+
+    <count loc_id="1502050000003f" cs_id="bogaardenstraat">
+        <volume h="1" val="0" />
+        <volume h="2" val="0" />
+        <volume h="3" val="0" />
+        <volume h="4" val="0" />
+        <volume h="5" val="0" />
+        <volume h="6" val="0" />
+        <volume h="7" val="202" />
+        <volume h="8" val="241" />
+        <volume h="9" val="254" />
+        <volume h="10" val="222" />
+        <volume h="11" val="181" />
+        <volume h="12" val="150" />
+        <volume h="13" val="133" />
+        <volume h="14" val="108" />
+        <volume h="15" val="109" />
+        <volume h="16" val="142" />
+        <volume h="17" val="212" />
+        <volume h="18" val="196" />
+        <volume h="19" val="205" />
+        <volume h="20" val="191" />
+        <volume h="21" val="157" />
+        <volume h="22" val="0" />
+        <volume h="23" val="0" />
+        <volume h="24" val="0" />
+    </count>
+
+    <!--    bikes - provelo -->
+    <count loc_id="12976603090000f" cs_id="rue_de_la_loi_15">
+        <volume h="1" val="0" />
+        <volume h="2" val="0" />
+        <volume h="3" val="0" />
+        <volume h="4" val="0" />
+        <volume h="5" val="0" />
+        <volume h="6" val="0" />
+        <volume h="7" val="0" />
         <volume h="8" val="0" />
-        <volume h="9" val="0" />
+        <volume h="9" val="1077" />
         <volume h="10" val="0" />
         <volume h="11" val="0" />
         <volume h="12" val="0" />
         <volume h="13" val="0" />
         <volume h="14" val="0" />
-        <volume h="15" val="20" />
+        <volume h="15" val="0" />
         <volume h="16" val="0" />
         <volume h="17" val="0" />
         <volume h="18" val="0" />
         <volume h="19" val="0" />
         <volume h="20" val="0" />
-        <volume h="21" val="50" />
+        <volume h="21" val="0" />
         <volume h="22" val="0" />
         <volume h="23" val="0" />
         <volume h="24" val="0" />
     </count>
+
 </counts>

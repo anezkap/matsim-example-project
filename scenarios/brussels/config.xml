@@ -14,9 +14,13 @@
 	</module>
 
 <!--	Testing random counts, not real data yet-->
-<!--	<module name="counts" >-->
-<!--		<param name="inputCountsFile" value="counts.xml" />-->
-<!--	</module>-->
+	<module name="counts" >
+		<param name="inputCountsFile" value="counts.xml" />
+		<param name="analyzedModes" value="car" />
+		<param name="filterModes" value="true" />
+		<param name="writeCountsInterval" value="10" />
+		<param name="countsScaleFactor" value="0.1" />
+	</module>
 
 	<module name="plans">
 <!--		<param name="inputPlansFile" value="population_testing.xml" />-->
@@ -47,8 +51,8 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_0904_v9" />
-		<param name="lastIteration" value="100" />
+		<param name="outputDirectory" value="output_0904_v11" />
+		<param name="lastIteration" value="10" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />
 		<param name="writeTripsInterval" value="10" />

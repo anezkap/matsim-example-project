@@ -110,8 +110,8 @@ public class RunMatsim{
 		@Override public double computeLinkBasedScore( Link link, Id<Vehicle> vehicleId, String bicycleMode  ){
 			double link_length = (double) link.getLength();
 
-//			double biking_allowance_per_km = 0.37;
-			double biking_allowance_per_km = 0.0;
+			double biking_allowance_per_km = 0.37;
+//			double biking_allowance_per_km = 0.0;
 
 //			change from m to km and multiply by the biking allowance constant
 			double biking_allowance = (link_length / 1000) * biking_allowance_per_km;

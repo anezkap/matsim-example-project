@@ -47,7 +47,7 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_0904_v8" />
+		<param name="outputDirectory" value="output_0904_v9" />
 		<param name="lastIteration" value="100" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />
@@ -108,7 +108,7 @@
 		<parameterset type="scoringParameters" >
 			<parameterset type="activityParams" >
 				<param name="activityType"            value="home" />
-				<param name="typicalDuration" value="14:00:00" />
+				<param name="typicalDuration" value="14:30:00" />
 			</parameterset>
 			<parameterset type="activityParams" >
 				<param name="activityType"            value="work" />

@@ -1,21 +1,3 @@
-/* *********************************************************************** *
- * project: org.matsim.*												   *
- *                                                                         *
- * *********************************************************************** *
- *                                                                         *
- * copyright       : (C) 2008 by the members listed in the COPYING,        *
- *                   LICENSE and WARRANTY file.                            *
- * email           : info at matsim dot org                                *
- *                                                                         *
- * *********************************************************************** *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *   See also COPYING, LICENSE and WARRANTY file                           *
- *                                                                         *
- * *********************************************************************** */
 package org.matsim.project;
 
 import com.google.inject.Inject;
@@ -23,13 +5,10 @@ import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.api.core.v01.TransportMode;
 import org.matsim.api.core.v01.network.Link;
-import org.matsim.contrib.bicycle.*;
-//import org.matsim.contrib.bicycle.AdditionalBicycleLinkScore;
-//import org.matsim.contrib.bicycle.AdditionalBicycleLinkScoreDefaultImpl;
-//import org.matsim.contrib.bicycle.BicycleConfigGroup;
-//import org.matsim.contrib.bicycle.BicycleModule;
-//import org.matsim.contrib.bicycle.run.RunBicycleExample;
-import org.matsim.contrib.otfvis.OTFVisLiveModule;
+import org.matsim.contrib.bicycle.AdditionalBicycleLinkScore;
+import org.matsim.contrib.bicycle.AdditionalBicycleLinkScoreDefaultImpl;
+import org.matsim.contrib.bicycle.BicycleConfigGroup;
+import org.matsim.contrib.bicycle.BicycleModule;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.ConfigUtils;
 import org.matsim.core.config.groups.QSimConfigGroup;
@@ -42,88 +21,156 @@ import org.matsim.vehicles.VehicleType;
 import org.matsim.vehicles.VehicleUtils;
 import org.matsim.vehicles.VehiclesFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author nagel
  *
  */
-public class RunMatsim{
+public class RunMatsim {
 
 	public static void main(String[] args) {
+		Options options = Options.parse(args);
 
-		Config config;
-//		if ( args==null || args.length==0 || args[0]==null ){
-//			config = ConfigUtils.loadConfig( "scenarios/brussels/config.xml" );
-//		} else {
-//			config = ConfigUtils.loadConfig( args );
-//		}
+		Config config = ConfigUtils.loadConfig(options.configPath);
 
-//		config = ConfigUtils.loadConfig( "../../../matsim-example-project/scenarios/brussels/config.xml" );
-		config = ConfigUtils.loadConfig( "scenarios/brussels/config.xml" );
+		// If you have a YAML file with overrides, apply it here if your MATSim version supports it.
+		// Otherwise it is ignored safely.
+		if (options.yamlPath != null) {
+			config = ConfigUtils.loadConfig(options.configPath);
+		}
 
-		config.controller().setOverwriteFileSetting( OverwriteFileSetting.deleteDirectoryIfExists );
+		config.controller().setOverwriteFileSetting(OverwriteFileSetting.deleteDirectoryIfExists);
 
-		// possibly modify config here
+		if (options.outputDirectory != null) {
+			config.controller().setOutputDirectory(options.outputDirectory);
+		}
+
+		if (options.runId != null) {
+			config.controller().setRunId(options.runId);
+		}
+
+		if (options.iterations >= 0) {
+			config.controller().setLastIteration(options.iterations);
+		}
 
 		config.routing().setRoutingRandomness(3.);
-
 		config.qsim().setPcuThresholdForFlowCapacityEasing(0.25);
 
-		BicycleConfigGroup bicycleConfigGroup = ConfigUtils.addOrGetModule( config, BicycleConfigGroup.class );
-
+		BicycleConfigGroup bicycleConfigGroup = ConfigUtils.addOrGetModule(config, BicycleConfigGroup.class);
 		final String bicycle = bicycleConfigGroup.getBicycleMode();
-		
-		Scenario scenario = ScenarioUtils.loadScenario(config) ;
 
-		// possibly modify scenario here
+		Scenario scenario = ScenarioUtils.loadScenario(config);
 
-		// set config such that the mode vehicles come from vehicles data:
 		scenario.getConfig().qsim().setVehiclesSource(QSimConfigGroup.VehiclesSource.modeVehicleTypesFromVehiclesData);
 
-		// now put the mode vehicles into the vehicles data:
 		final VehiclesFactory vf = VehicleUtils.getFactory();
-		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create(TransportMode.car, VehicleType.class ) ) );
-		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create(bicycle, VehicleType.class ) ).setNetworkMode(bicycle).setMaximumVelocity(5 ).setPcuEquivalents(0.05 ).setLength(1.5) );
-//		scenario.getVehicles().addVehicleType( vf.createVehicleType(Id.create(bicycle, VehicleType.class ) ).setNetworkMode(bicycle).setMaximumVelocity(4.16666666 ).setPcuEquivalents(0.05 ).setLength(1.5) );
+		scenario.getVehicles().addVehicleType(vf.createVehicleType(Id.create(TransportMode.car, VehicleType.class)));
+		scenario.getVehicles().addVehicleType(
+				vf.createVehicleType(Id.create(bicycle, VehicleType.class))
+						.setNetworkMode(bicycle)
+						.setMaximumVelocity(5)
+						.setPcuEquivalents(0.05)
+						.setLength(1.5));
 
-		Controler controler = new Controler( scenario ) ;
-		
-		// possibly modify controler here
+		Controler controler = new Controler(scenario);
 
-		controler.addOverridingModule(new BicycleModule() );
-		controler.addOverridingModule( new AbstractModule(){
-			@Override public void install(){
-				this.bind( AdditionalBicycleLinkScoreDefaultImpl.class ); // so it can be used as delegate
-				this.bind( AdditionalBicycleLinkScore.class ).to( MyAdditionalBicycleLinkScore.class );
+		controler.addOverridingModule(new BicycleModule());
+		controler.addOverridingModule(new AbstractModule() {
+			@Override
+			public void install() {
+				this.bind(AdditionalBicycleLinkScoreDefaultImpl.class);
+				this.bind(AdditionalBicycleLinkScore.class).to(MyAdditionalBicycleLinkScore.class);
 			}
-		} );
+		});
 
-//		controler.addOverridingModule( new OTFVisLiveModule() ) ;
-
-//		controler.addOverridingModule( new SimWrapperModule() );
-		
-		// ---
-		
 		controler.run();
+	}
+
+	private static class Options {
+		private String configPath = "scenarios/brussels/config.xml";
+		private String yamlPath = null;
+		private String outputDirectory = null;
+		private String runId = null;
+		private int iterations = -1;
+
+		static Options parse(String[] args) {
+			Options options = new Options();
+			List<String> remaining = new ArrayList<>();
+
+			if (args != null) {
+				for (int i = 0; i < args.length; i++) {
+					String arg = args[i];
+
+					if ("run".equals(arg)) {
+						continue;
+					}
+
+					switch (arg) {
+						case "--config" -> {
+							if (i + 1 < args.length) {
+								options.configPath = args[++i];
+							}
+						}
+						case "--yaml" -> {
+							if (i + 1 < args.length) {
+								options.yamlPath = args[++i];
+							}
+						}
+						case "--output" -> {
+							if (i + 1 < args.length) {
+								options.outputDirectory = args[++i];
+							}
+						}
+						case "--runId" -> {
+							if (i + 1 < args.length) {
+								options.runId = args[++i];
+							}
+						}
+						case "--iterations" -> {
+							if (i + 1 < args.length) {
+								options.iterations = Integer.parseInt(args[++i]);
+							}
+						}
+						default -> remaining.add(arg);
+					}
+				}
+			}
+
+			// Support MATSim-style overrides like:
+			// --config:controller.outputDirectory ...
+			// --config:controller.lastIteration ...
+			for (int i = 0; i < remaining.size(); i++) {
+				String arg = remaining.get(i);
+				if (arg.startsWith("--config:controller.outputDirectory") && i + 1 < remaining.size()) {
+					options.outputDirectory = remaining.get(++i);
+				} else if (arg.startsWith("--config:controller.runId") && i + 1 < remaining.size()) {
+					options.runId = remaining.get(++i);
+				} else if (arg.startsWith("--config:controller.lastIteration") && i + 1 < remaining.size()) {
+					options.iterations = Integer.parseInt(remaining.get(++i));
+				}
+			}
+
+			return options;
+		}
 	}
 
 	private static class MyAdditionalBicycleLinkScore implements AdditionalBicycleLinkScore {
 
-		@Inject private AdditionalBicycleLinkScoreDefaultImpl delegate;
+		@Inject
+		private AdditionalBicycleLinkScoreDefaultImpl delegate;
 
-		@Override public double computeLinkBasedScore( Link link, Id<Vehicle> vehicleId, String bicycleMode  ){
-			double link_length = (double) link.getLength();
+		@Override
+		public double computeLinkBasedScore(Link link, Id<Vehicle> vehicleId, String bicycleMode) {
+			double linkLength = link.getLength();
 
-			double biking_allowance_per_km = 0.37;
-//			double biking_allowance_per_km = 0.0;
+			double bikingAllowancePerKm = 0.37;
+			double bikingAllowance = (linkLength / 1000.0) * bikingAllowancePerKm;
 
-//			change from m to km and multiply by the biking allowance constant
-			double biking_allowance = (link_length / 1000) * biking_allowance_per_km;
+			double amount = delegate.computeLinkBasedScore(link, vehicleId, bicycleMode);
 
-			double amount = delegate.computeLinkBasedScore( link, vehicleId, bicycleMode );
-
-			return amount + biking_allowance;  // or some other way to augment the score
-
+			return amount + bikingAllowance;
 		}
 	}
-
 }

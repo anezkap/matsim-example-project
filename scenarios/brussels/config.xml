@@ -35,12 +35,12 @@
 <!--		<param name="inputPlansFile" value="population_active_25percent_sample.xml.gz" />-->
 
 <!--		Testing scoring with two agents only-->
-		<param name="inputPlansFile" value="population_1_person.xml" />
+<!--		<param name="inputPlansFile" value="population_1_person.xml" />-->
 
 
 <!--		0904 new version of population-->
 <!--		<param name="inputPlansFile" value="population_active_0904_5percent_sample.xml.gz" />-->
-<!--				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />-->
+				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />
 	</module>
 
 	<module name="linkStats" >

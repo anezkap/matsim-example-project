@@ -52,7 +52,7 @@
 
 	<module name="controller">
 		<param name="outputDirectory" value="output_1804_v1" />
-		<param name="lastIteration" value="10" />
+		<param name="lastIteration" value="5" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />
 		<param name="writeTripsInterval" value="10" />

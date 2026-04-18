@@ -20,9 +20,14 @@ import org.matsim.vehicles.Vehicle;
 import org.matsim.vehicles.VehicleType;
 import org.matsim.vehicles.VehicleUtils;
 import org.matsim.vehicles.VehiclesFactory;
+import org.yaml.snakeyaml.Yaml;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author nagel
@@ -35,24 +40,20 @@ public class RunMatsim {
 
 		Config config = ConfigUtils.loadConfig(options.configPath);
 
-		// If you have a YAML file with overrides, apply it here if your MATSim version supports it.
-		// Otherwise it is ignored safely.
-		if (options.yamlPath != null) {
-			config = ConfigUtils.loadConfig(options.configPath);
-		}
-
 		config.controller().setOverwriteFileSetting(OverwriteFileSetting.deleteDirectoryIfExists);
 
 		if (options.outputDirectory != null) {
 			config.controller().setOutputDirectory(options.outputDirectory);
 		}
-
 		if (options.runId != null) {
 			config.controller().setRunId(options.runId);
 		}
-
 		if (options.iterations >= 0) {
 			config.controller().setLastIteration(options.iterations);
+		}
+
+		if (options.yamlPath != null) {
+			applyYamlScoringOverrides(config, options.yamlPath);
 		}
 
 		config.routing().setRoutingRandomness(3.);
@@ -62,7 +63,6 @@ public class RunMatsim {
 		final String bicycle = bicycleConfigGroup.getBicycleMode();
 
 		Scenario scenario = ScenarioUtils.loadScenario(config);
-
 		scenario.getConfig().qsim().setVehiclesSource(QSimConfigGroup.VehiclesSource.modeVehicleTypesFromVehiclesData);
 
 		final VehiclesFactory vf = VehicleUtils.getFactory();
@@ -88,6 +88,53 @@ public class RunMatsim {
 		controler.run();
 	}
 
+	private static void applyYamlScoringOverrides(Config config, String yamlPath) {
+		try (InputStream input = new FileInputStream(yamlPath)) {
+			Object loaded = new Yaml().load(input);
+
+			if (!(loaded instanceof Map<?, ?> root)) {
+				return;
+			}
+
+			Object scoringObj = root.get("scoring");
+			if (!(scoringObj instanceof Map<?, ?> scoringMap)) {
+				return;
+			}
+
+			Object scoringParametersObj = scoringMap.get("scoringParameters");
+			if (!(scoringParametersObj instanceof List<?> scoringParametersList) || scoringParametersList.isEmpty()) {
+				return;
+			}
+
+			Object firstScoringParametersObj = scoringParametersList.get(0);
+			if (!(firstScoringParametersObj instanceof Map<?, ?> firstScoringParametersMap)) {
+				return;
+			}
+
+			Object modeParamsObj = firstScoringParametersMap.get("modeParams");
+			if (!(modeParamsObj instanceof List<?> modeParamsList)) {
+				return;
+			}
+
+			for (Object entryObj : modeParamsList) {
+				if (!(entryObj instanceof Map<?, ?> entryMap)) {
+					continue;
+				}
+
+				Object modeObj = entryMap.get("mode");
+				Object constantObj = entryMap.get("constant");
+				if (!(modeObj instanceof String mode) || constantObj == null) {
+					continue;
+				}
+
+				double constant = Double.parseDouble(constantObj.toString());
+				config.scoring().getOrCreateModeParams(mode).setConstant(constant);
+			}
+		} catch (Exception e) {
+			throw new RuntimeException("Failed to apply YAML scoring overrides from " + yamlPath, e);
+		}
+	}
+
 	private static class Options {
 		private String configPath = "scenarios/brussels/config.xml";
 		private String yamlPath = null;
@@ -97,58 +144,53 @@ public class RunMatsim {
 
 		static Options parse(String[] args) {
 			Options options = new Options();
-			List<String> remaining = new ArrayList<>();
 
-			if (args != null) {
-				for (int i = 0; i < args.length; i++) {
-					String arg = args[i];
-
-					if ("run".equals(arg)) {
-						continue;
-					}
-
-					switch (arg) {
-						case "--config" -> {
-							if (i + 1 < args.length) {
-								options.configPath = args[++i];
-							}
-						}
-						case "--yaml" -> {
-							if (i + 1 < args.length) {
-								options.yamlPath = args[++i];
-							}
-						}
-						case "--output" -> {
-							if (i + 1 < args.length) {
-								options.outputDirectory = args[++i];
-							}
-						}
-						case "--runId" -> {
-							if (i + 1 < args.length) {
-								options.runId = args[++i];
-							}
-						}
-						case "--iterations" -> {
-							if (i + 1 < args.length) {
-								options.iterations = Integer.parseInt(args[++i]);
-							}
-						}
-						default -> remaining.add(arg);
-					}
-				}
+			if (args == null) {
+				return options;
 			}
 
-			// Support MATSim-style overrides like:
-			// --config:controller.outputDirectory ...
-			// --config:controller.lastIteration ...
-			for (int i = 0; i < remaining.size(); i++) {
-				String arg = remaining.get(i);
-				if (arg.startsWith("--config:controller.outputDirectory") && i + 1 < remaining.size()) {
-					options.outputDirectory = remaining.get(++i);
-				} else if (arg.startsWith("--config:controller.runId") && i + 1 < remaining.size()) {
-					options.runId = remaining.get(++i);
-				} else if (arg.startsWith("--config:controller.lastIteration") && i + 1 < remaining.size()) {
-					options.iterations = Integer.parseInt(remaining.get(++i));
+			for (int i = 0; i < args.length; i++) {
+				String arg = args[i];
+
+				if ("run".equals(arg)) {
+					continue;
+				}
+
+				switch (arg) {
+					case "--config" -> {
+						if (i + 1 < args.length) {
+							options.configPath = args[++i];
+						}
+					}
+					case "--yaml" -> {
+						if (i + 1 < args.length) {
+							options.yamlPath = args[++i];
+						}
+					}
+					case "--output" -> {
+						if (i + 1 < args.length) {
+							options.outputDirectory = args[++i];
+						}
+					}
+					case "--runId" -> {
+						if (i + 1 < args.length) {
+							options.runId = args[++i];
+						}
+					}
+					case "--iterations" -> {
+						if (i + 1 < args.length) {
+							options.iterations = Integer.parseInt(args[++i]);
+						}
+					}
+					default -> {
+						if (arg.startsWith("--config:controler.outputDirectory") && i + 1 < args.length) {
+							options.outputDirectory = args[++i];
+						} else if (arg.startsWith("--config:controler.runId") && i + 1 < args.length) {
+							options.runId = args[++i];
+						} else if (arg.startsWith("--config:controler.lastIteration") && i + 1 < args.length) {
+							options.iterations = Integer.parseInt(args[++i]);
+						}
+					}
 				}
 			}
 

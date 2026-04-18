@@ -19,7 +19,7 @@
 		<param name="analyzedModes" value="car" />
 		<param name="filterModes" value="true" />
 		<param name="writeCountsInterval" value="10" />
-		<param name="countsScaleFactor" value="0.1" />
+		<param name="countsScaleFactor" value="100" />
 	</module>
 
 	<module name="plans">
@@ -34,13 +34,13 @@
 <!--		<param name="inputPlansFile" value="population_25percent_sample.xml.gz" />-->
 <!--		<param name="inputPlansFile" value="population_active_25percent_sample.xml.gz" />-->
 
-<!--		Testing scoring with one agent only-->
-<!--		<param name="inputPlansFile" value="population_1_person.xml" />-->
+<!--		Testing scoring with two agents only-->
+		<param name="inputPlansFile" value="population_1_person.xml" />
 
 
 <!--		0904 new version of population-->
 <!--		<param name="inputPlansFile" value="population_active_0904_5percent_sample.xml.gz" />-->
-				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />
+<!--				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />-->
 	</module>
 
 	<module name="linkStats" >
@@ -51,7 +51,7 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_0904_v11" />
+		<param name="outputDirectory" value="output_1804_v1" />
 		<param name="lastIteration" value="10" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />

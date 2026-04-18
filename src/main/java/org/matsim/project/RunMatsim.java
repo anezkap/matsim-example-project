@@ -51,11 +51,14 @@ public class RunMatsim{
 	public static void main(String[] args) {
 
 		Config config;
-		if ( args==null || args.length==0 || args[0]==null ){
-			config = ConfigUtils.loadConfig( "scenarios/brussels/config.xml" );
-		} else {
-			config = ConfigUtils.loadConfig( args );
-		}
+//		if ( args==null || args.length==0 || args[0]==null ){
+//			config = ConfigUtils.loadConfig( "scenarios/brussels/config.xml" );
+//		} else {
+//			config = ConfigUtils.loadConfig( args );
+//		}
+
+//		config = ConfigUtils.loadConfig( "../../../matsim-example-project/scenarios/brussels/config.xml" );
+		config = ConfigUtils.loadConfig( "scenarios/brussels/config.xml" );
 
 		config.controller().setOverwriteFileSetting( OverwriteFileSetting.deleteDirectoryIfExists );
 

@@ -20,7 +20,7 @@
 	<properties>
 
 		<!-- Don't change version here, but in the parent section above! -->
-		<matsim.version>${parent.version}</matsim.version>
+		<matsim.version>${project.parent.version}</matsim.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -191,7 +191,7 @@
 								<!-- The following sets the main class for the executable jar as you otherwise would with the assembly plugin -->
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<manifestEntries>
-										<Main-Class>org.matsim.gui.MATSimGUI</Main-Class>
+										<Main-Class>org.matsim.project.RunMatsim</Main-Class>
 										<Specification-Vendor>org.matsim</Specification-Vendor>
 										<Implementation-Vendor>org.matsim</Implementation-Vendor>
 										<Implementation-Version>${project.version}</Implementation-Version>

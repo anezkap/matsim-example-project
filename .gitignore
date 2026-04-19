@@ -63,3 +63,5 @@ hs_err_pid*
 /src/main/java/org/matsim/population/output/population_active_0904_1percent_sample.xml.gz
 /scenarios/brussels/population_active_0904_1percent_sample.xml.gz
 /scenarios/brussels/population_active_0904_1percent_sample.xml
+/scenarios/brussels/population_active_0904_10percent_sample.xml.gz
+/scenarios/brussels/001.30.plans.xml.gz

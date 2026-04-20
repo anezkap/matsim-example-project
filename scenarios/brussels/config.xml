@@ -37,14 +37,13 @@
 <!--		Testing scoring with two agents only-->
 <!--		<param name="inputPlansFile" value="population_1_person.xml" />-->
 
-
 <!--		0904 new version of population-->
 <!--		<param name="inputPlansFile" value="population_active_0904_5percent_sample.xml.gz" />-->
 <!--				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />-->
-<!--			<param name="inputPlansFile" value="population_active_0904_10percent_sample.xml.gz" />-->
+			<param name="inputPlansFile" value="population_active_0904_10percent_sample.xml.gz" />
 
 <!--		Starting with some plans already with 10% population-->
-			<param name="inputPlansFile" value="population_active_0904_10percent_sample.xml.gz" />
+<!--			<param name="inputPlansFile" value="001.30.plans.xml.gz" />-->
 	</module>
 
 	<module name="linkStats" >
@@ -233,11 +232,11 @@
 	<module name="bicycle" >
 		<param name="bicycleMode" value="bike" />
 		<!-- marginalUtilityOfSurfacetype -->
-		<param name="marginalUtilityOfComfort_m" value="0.0" />
+		<param name="marginalUtilityOfComfort_m" value="-2.0E-4" />
 		<!-- marginalUtilityOfGradient -->
-		<param name="marginalUtilityOfGradient_m_100m" value="-0.00006" />
+		<param name="marginalUtilityOfGradient_m_100m" value="-0.0002" />
 		<!-- marginalUtilityOfStreettype -->
-		<param name="marginalUtilityOfInfrastructure_m" value="0.0" />
+		<param name="marginalUtilityOfInfrastructure_m" value="-2.0E-4" />
 		<!-- maxBicycleSpeed -->
 		<param name="motorizedInteraction" value="false" />
 	</module>

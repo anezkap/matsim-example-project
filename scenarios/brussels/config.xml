@@ -39,11 +39,12 @@
 
 <!--		0904 new version of population-->
 <!--		<param name="inputPlansFile" value="population_active_0904_5percent_sample.xml.gz" />-->
-				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />
+<!--				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />-->
 <!--			<param name="inputPlansFile" value="population_active_0904_10percent_sample.xml.gz" />-->
 
 <!--		Starting with some plans already with 10% population-->
 <!--			<param name="inputPlansFile" value="001.30.plans.xml.gz" />-->
+		<param name="inputPlansFile" value="../../output_1804_v3/output_plans.xml.gz" />
 	</module>
 
 	<module name="linkStats" >
@@ -54,8 +55,8 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_1804_v3" />
-		<param name="lastIteration" value="30" />
+		<param name="outputDirectory" value="output_1804_v4" />
+		<param name="lastIteration" value="60" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />
 		<param name="writeTripsInterval" value="10" />
@@ -164,7 +165,7 @@
 	</module>
 
 	<module name="replanning">
-		<param name="fractionOfIterationsToDisableInnovation" value="0.95" />
+		<param name="fractionOfIterationsToDisableInnovation" value="0.9" />
 
 		<!-- Short distance: full mode choice -->
 		<parameterset type="strategysettings">

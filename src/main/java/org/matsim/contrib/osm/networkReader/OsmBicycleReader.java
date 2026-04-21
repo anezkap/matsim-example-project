@@ -79,6 +79,15 @@ public final class OsmBicycleReader extends SupersonicOsmNetworkReader {
     private static void setCycleWay(Link link, Map<String, String> tags) {
         if (tags.containsKey(OsmTags.CYCLEWAY))
             link.getAttributes().putAttribute(OsmTags.CYCLEWAY, tags.get(OsmTags.CYCLEWAY));
+        else if (tags.containsKey("cycleway:both"))
+            link.getAttributes().putAttribute(OsmTags.CYCLEWAY, tags.get("cycleway:both"));
+
+        // If the cycleway is only on one side, only apply it to the forward or reverse link accordingly
+        // TODO: also fix this for oneway streets
+        else if (tags.containsKey("cycleway:right") && link.getId().toString().endsWith("f"))
+            link.getAttributes().putAttribute(OsmTags.CYCLEWAY, tags.get("cycleway:right"));
+        else if (tags.containsKey("cycleway:left") && link.getId().toString().endsWith("r"))
+            link.getAttributes().putAttribute(OsmTags.CYCLEWAY, tags.get("cycleway:left"));
     }
 
     private static void setRestrictions(Link link, Map<String, String> tags) {

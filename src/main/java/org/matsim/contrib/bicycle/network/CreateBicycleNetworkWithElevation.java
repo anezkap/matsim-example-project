@@ -19,9 +19,9 @@ public class CreateBicycleNetworkWithElevation {
 //    private static final String inputTiffFile = "inputs_network/terrain.tif";
 //    private static final String outputFile = "outputs_network/network_with_cars_bikes_elevations.xml.gz";
 
-    private static final String inputOsmFile = "../../../../Downloads/testing_brussels.osm.pbf";
+    private static final String inputOsmFile = "../../../../Downloads/belgium_merged_network.osm.pbf";
     private static final String inputTiffFile = "inputs_network/terrain.tif";
-    private static final String outputFile = "../../../../Downloads/testing_brussels_network.xml.gz";
+    private static final String outputFile = "../../../../Downloads/belgium_merged_network.xml.gz";
 
     public static void main(String[] args) {
 
@@ -35,6 +35,7 @@ public class CreateBicycleNetworkWithElevation {
                     // Pass the transformation into the method so we can ensure the coord is in Lambert 72
                     addElevationIfNecessary(link.getFromNode(), elevationParser, transformation);
                     addElevationIfNecessary(link.getToNode(), elevationParser, transformation);
+                    addQuietness(link.getId());
                 })
                 .build()
                 .read(inputOsmFile);
@@ -69,5 +70,9 @@ public class CreateBicycleNetworkWithElevation {
             // just leave it at Z=0.0 and move on.
             node.setCoord(CoordUtils.createCoord(coord.getX(), coord.getY(), 0.0));
         }
+    }
+
+    private static void addQuietness(String linkId) {
+//        check the geojson and find the feature with given id and then add an attribute to the link
     }
 }

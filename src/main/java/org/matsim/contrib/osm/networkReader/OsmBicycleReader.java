@@ -142,7 +142,7 @@ public final class OsmBicycleReader extends SupersonicOsmNetworkReader {
         public Builder() {
             addOverridingLinkProperties(OsmTags.TRACK, new LinkProperties(9, 1, 30 / 3.6, 1500 * BIKE_PCU, false));
             addOverridingLinkProperties(OsmTags.CYCLEWAY, new LinkProperties(9, 1, 30 / 3.6, 1500 * BIKE_PCU, false));
-            addOverridingLinkProperties(OsmTags.SERVICE, new LinkProperties(9, 1, 10 / 3.6, 1000 * BIKE_PCU, false));
+            addOverridingLinkProperties(OsmTags.SERVICE, new LinkProperties(9, 1, 30 / 3.6, 1500 * BIKE_PCU, false));
             addOverridingLinkProperties(OsmTags.FOOTWAY, new LinkProperties(10, 1, 10 / 3.6, 600 * BIKE_PCU, false));
             addOverridingLinkProperties(OsmTags.PEDESTRIAN, new LinkProperties(10, 1, 10 / 3.6, 600 * BIKE_PCU, false));
             addOverridingLinkProperties(OsmTags.PATH, new LinkProperties(10, 1, 20 / 3.6, 600 * BIKE_PCU, false));

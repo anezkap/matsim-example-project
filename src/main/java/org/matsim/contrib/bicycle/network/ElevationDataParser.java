@@ -56,8 +56,9 @@ public class ElevationDataParser {
         // String tiffFile = "../../../shared-svn/studies/countries/de/berlin-bike/networkRawData/elevation_brasilia/srtm_27_16.tif"; // Brasilia SRTM3
 
         String scenarioCRS = "EPSG:4326"; // WGS84 as the coorinates to test below are stated like this
+        String tiffCRS = "EPSG:4326";   // Not sure what Berlin TIFF used, so using 4326 as an example
 
-        ElevationDataParser elevationDataParser = new ElevationDataParser(tiffFile, scenarioCRS);
+        ElevationDataParser elevationDataParser = new ElevationDataParser(tiffFile, scenarioCRS, tiffCRS);
 
         System.out.println("Teufelsberg: " + elevationDataParser.getElevation(13.2407, 52.4971));
         System.out.println("Tempelhofer Feld: " + elevationDataParser.getElevation(13.3989, 52.4755));
@@ -70,8 +71,10 @@ public class ElevationDataParser {
     }
 
 
-    public ElevationDataParser(String tiffFile, String scenarioCRS) {
-        this.ct = TransformationFactory.getCoordinateTransformation(scenarioCRS, scenarioCRS);
+    public ElevationDataParser(String tiffFile, String scenarioCRS, String tiffCRS) {
+        // Transforms node coordinates from the scenarioCRS (= outputCRS in CreateBicycleNetworkWithElevation)
+        // to the tiffCRS, so that we can look up the correct elevation pixel in the GeoTIFF.
+        this.ct = TransformationFactory.getCoordinateTransformation(scenarioCRS, tiffCRS);
 
         GeoTiffReader reader = null;
         try {

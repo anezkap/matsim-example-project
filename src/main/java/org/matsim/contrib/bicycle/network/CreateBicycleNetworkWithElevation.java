@@ -24,13 +24,18 @@ public class CreateBicycleNetworkWithElevation {
 //    private static final String outputFile = "outputs_network/network_with_cars_bikes_elevations.xml.gz";
 
 //    private static final String inputOsmFile = "../../../../Downloads/belgium_merged_network.osm.pbf";
-//    private static final String inputTiffFile = "inputs_network/terrain.tif";
+//    private static final String inputTiffFile = "../../../../Downloads/DTM_RBC_50cm.tif";
 //    private static final String outputFile = "../../../../Downloads/belgium_merged_network.xml.gz";
 //    private static final String quietnessFile = "../../../../Downloads/Bruxelles_Cyclability_Data.geojson";
 
-    private static final String inputOsmFile = "../../../../Downloads/testing_brussels.osm.pbf";
-    private static final String inputTiffFile = "inputs_network/terrain.tif";
-    private static final String outputFile = "../../../../Downloads/testing_brussels_network.xml.gz";
+//    private static final String inputOsmFile = "../../../../Downloads/testing_brussels.osm.pbf";
+//    private static final String inputTiffFile = "../../../../Downloads/DTM_RBC_50cm_fixed.tif";
+//    private static final String outputFile = "../../../../Downloads/testing_brussels_network.xml.gz";
+//    private static final String quietnessFile = "../../../../Downloads/Bruxelles_Cyclability_Data.geojson";
+
+    private static final String inputOsmFile = "../../../../Downloads/brussels_network.osm.pbf";
+    private static final String inputTiffFile = "../../../../Downloads/DTM_RBC_50cm.tif";
+    private static final String outputFile = "../../../../Downloads/brussels_only_network.xml.gz";
     private static final String quietnessFile = "../../../../Downloads/Bruxelles_Cyclability_Data.geojson";
 
     public static void main(String[] args) throws IOException {
@@ -46,9 +51,8 @@ public class CreateBicycleNetworkWithElevation {
         var network = new OsmBicycleReader.Builder()
                 .setCoordinateTransformation(transformation)
                 .setAfterLinkCreated((link, tags, direction) -> {
-                    // Pass the transformation into the method so we can ensure the coord is in Lambert 72
-                    addElevationIfNecessary(link.getFromNode(), elevationParser, transformation);
-                    addElevationIfNecessary(link.getToNode(), elevationParser, transformation);
+                    addElevationIfNecessary(link.getFromNode(), elevationParser);
+                    addElevationIfNecessary(link.getToNode(), elevationParser);
                     addQuietness(link, quietnessMap);
                 })
                 .build()
@@ -59,29 +63,23 @@ public class CreateBicycleNetworkWithElevation {
         new NetworkWriter(network).write(outputFile);
     }
 
-    private static synchronized void addElevationIfNecessary(Node node, ElevationDataParser elevationParser, CoordinateTransformation transformation) {
+    private static synchronized void addElevationIfNecessary(Node node, ElevationDataParser elevationParser) {
+        if (node.getCoord().hasZ()) return; // already has elevation, skip
+
         Coord coord = node.getCoord();
 
-        if (coord.getX() < 1000) {
-            coord = transformation.transform(coord);
-        }
-
-        // Inside your lambda or addElevation method
         try {
-            // Only call getElevation if we are reasonably sure it's inside the TIFF bounds
             double elevation = elevationParser.getElevation(coord);
 
-            if (elevation < -500) {  // used -999 for null values
+            // Clamp invalid/null values (TIFF uses -999 for no-data)
+            if (Double.isNaN(elevation) || elevation < -500) {
                 elevation = 0;
             }
 
-            // Set elevation only if it's a valid number
-            if (!Double.isNaN(elevation)) {
-                node.setCoord(CoordUtils.createCoord(coord.getX(), coord.getY(), elevation));
-            }
+            node.setCoord(CoordUtils.createCoord(coord.getX(), coord.getY(), elevation));
+
         } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
-            // If the node is outside the TIFF (e.g. index -31985),
-            // just leave it at Z=0.0 and move on.
+            // Node is outside the TIFF bounds — default to elevation 0
             node.setCoord(CoordUtils.createCoord(coord.getX(), coord.getY(), 0.0));
         }
     }

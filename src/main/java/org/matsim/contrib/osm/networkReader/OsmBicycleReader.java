@@ -82,11 +82,16 @@ public final class OsmBicycleReader extends SupersonicOsmNetworkReader {
         else if (tags.containsKey("cycleway:both"))
             link.getAttributes().putAttribute(OsmTags.CYCLEWAY, tags.get("cycleway:both"));
 
-        // If the cycleway is only on one side, only apply it to the forward or reverse link accordingly
-        // TODO: also fix this for oneway streets
+        // For right-hand traffic (e.g. Belgium): the right side of the road corresponds to the
+        // forward direction, and the left side to the reverse direction.
+        // If the cycleway is only on one side, only apply it to the forward or reverse link accordingly.
         else if (tags.containsKey("cycleway:right") && link.getId().toString().endsWith("f"))
             link.getAttributes().putAttribute(OsmTags.CYCLEWAY, tags.get("cycleway:right"));
         else if (tags.containsKey("cycleway:left") && link.getId().toString().endsWith("r"))
+            link.getAttributes().putAttribute(OsmTags.CYCLEWAY, tags.get("cycleway:left"));
+
+        // Add cycleway for oneway roads that have reverse cycleway
+        else if (tags.containsKey("cycleway:left") && link.getId().toString().endsWith("_bike-reverse"))
             link.getAttributes().putAttribute(OsmTags.CYCLEWAY, tags.get("cycleway:left"));
     }
 

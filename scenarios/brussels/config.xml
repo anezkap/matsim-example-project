@@ -35,10 +35,10 @@
 <!--		<param name="inputPlansFile" value="population_active_25percent_sample.xml.gz" />-->
 
 <!--		Testing scoring with two agents only-->
-<!--		<param name="inputPlansFile" value="population_1_person.xml" />-->
+		<param name="inputPlansFile" value="population_1_person.xml" />
 
 <!--		0904 new version of population-->
-		<param name="inputPlansFile" value="population_active_0904_5percent_sample.xml.gz" />
+<!--		<param name="inputPlansFile" value="population_active_0904_5percent_sample.xml.gz" />-->
 <!--				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />-->
 <!--			<param name="inputPlansFile" value="population_active_0904_10percent_sample.xml.gz" />-->
 
@@ -55,7 +55,7 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_1804_v5" />
+		<param name="outputDirectory" value="output_2304_v2" />
 		<param name="lastIteration" value="100" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />
@@ -132,6 +132,7 @@
 				<param name="marginalUtilityOfDistance_util_m" value="-0.0002" />
 				<param name="marginalUtilityOfTraveling_util_hr" value="-1.0" />
 				<param name="mode" value="bike" />
+<!--				<param name="monetaryDistanceRate" value="-0.00037" />-->
 				<param name="monetaryDistanceRate" value="0.0" />
 			</parameterset>
 			<parameterset type="modeParams" >

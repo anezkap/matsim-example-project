@@ -55,7 +55,7 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_2304_v7" />
+		<param name="outputDirectory" value="output_2304_v8" />
 		<param name="lastIteration" value="5" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />
@@ -132,8 +132,8 @@
 				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
 				<param name="marginalUtilityOfTraveling_util_hr" value="0.0" />
 				<param name="mode" value="bike" />
-<!--				<param name="monetaryDistanceRate" value="0.00037" />-->
-				<param name="monetaryDistanceRate" value="0.0" />
+				<param name="monetaryDistanceRate" value="0.00037" />
+<!--				<param name="monetaryDistanceRate" value="0.0" />-->
 			</parameterset>
 			<parameterset type="modeParams" >
 				<param name="constant" value="0.2" />

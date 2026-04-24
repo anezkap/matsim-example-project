@@ -205,15 +205,15 @@ public class RunMatsim {
 
 		@Override
 		public double computeLinkBasedScore(Link link, Id<Vehicle> vehicleId, String bicycleMode) {
-			double distance = link.getLength();
-
-			double bikingAllowancePerKm = 0.37;
-			double bikingAllowance = (distance / 1000.0) * bikingAllowancePerKm;
-
-			double amount = delegate.computeLinkBasedScore(link, vehicleId, bicycleMode);
-
-			return amount + bikingAllowance;
-//			return delegate.computeLinkBasedScore(link, vehicleId, bicycleMode);
+//			double distance = link.getLength();
+//
+//			double bikingAllowancePerKm = 0.37;
+//			double bikingAllowance = (distance / 1000.0) * bikingAllowancePerKm;
+//
+//			double amount = delegate.computeLinkBasedScore(link, vehicleId, bicycleMode);
+//
+//			return amount + bikingAllowance;
+			return delegate.computeLinkBasedScore(link, vehicleId, bicycleMode);
 		}
 	}
 }

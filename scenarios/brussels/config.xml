@@ -55,7 +55,7 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_2304_v4" />
+		<param name="outputDirectory" value="output_2304_v5" />
 		<param name="lastIteration" value="100" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />
@@ -234,11 +234,14 @@
 	<module name="bicycle" >
 		<param name="bicycleMode" value="bike" />
 		<!-- marginalUtilityOfSurfacetype -->
-		<param name="marginalUtilityOfComfort_m" value="-2.0E-4" />
+		<param name="marginalUtilityOfComfort_m" value="0.0" />
+<!--		<param name="marginalUtilityOfComfort_m" value="-2.0E-4" />-->
 		<!-- marginalUtilityOfGradient -->
-		<param name="marginalUtilityOfGradient_m_100m" value="-0.0002" />
+		<param name="marginalUtilityOfGradient_m_100m" value="0.0" />
+<!--		<param name="marginalUtilityOfGradient_m_100m" value="-0.0002" />-->
 		<!-- marginalUtilityOfStreettype -->
-		<param name="marginalUtilityOfInfrastructure_m" value="-2.0E-4" />
+		<param name="marginalUtilityOfInfrastructure_m" value="0.0" />
+<!--		<param name="marginalUtilityOfInfrastructure_m" value="-2.0E-4" />-->
 		<!-- maxBicycleSpeed -->
 		<param name="motorizedInteraction" value="false" />
 	</module>

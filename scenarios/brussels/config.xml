@@ -38,8 +38,8 @@
 <!--		<param name="inputPlansFile" value="population_1_person.xml" />-->
 
 <!--		0904 new version of population-->
-		<param name="inputPlansFile" value="population_active_0904_5percent_sample.xml.gz" />
-<!--				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />-->
+<!--		<param name="inputPlansFile" value="population_active_0904_5percent_sample.xml.gz" />-->
+				<param name="inputPlansFile" value="population_active_0904_1percent_sample.xml.gz" />
 <!--			<param name="inputPlansFile" value="population_active_0904_10percent_sample.xml.gz" />-->
 
 <!--		Starting with some plans already with 10% population-->
@@ -55,7 +55,7 @@
 	</module>
 
 	<module name="controller">
-		<param name="outputDirectory" value="output_2304_v8" />
+		<param name="outputDirectory" value="output_0105_v1" />
 		<param name="lastIteration" value="5" />
 		<param name="writeEventsInterval" value="10" />
 		<param name="writePlansInterval" value="10" />

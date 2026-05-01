@@ -76,12 +76,16 @@ public class RunMatsim {
 
 		Controler controler = new Controler(scenario);
 
+		final double bikingAllowancePerKm = options.bikingAllowancePerKm;
+
 		controler.addOverridingModule(new BicycleModule());
 		controler.addOverridingModule(new AbstractModule() {
 			@Override
 			public void install() {
 				this.bind(AdditionalBicycleLinkScoreDefaultImpl.class);
-				this.bind(AdditionalBicycleLinkScore.class).to(MyAdditionalBicycleLinkScore.class);
+				this.bind(AdditionalBicycleLinkScore.class).toInstance(
+						new MyAdditionalBicycleLinkScore(bikingAllowancePerKm)
+				);
 			}
 		});
 
@@ -141,6 +145,7 @@ public class RunMatsim {
 		private String outputDirectory = null;
 		private String runId = null;
 		private int iterations = -1;
+		private double bikingAllowancePerKm = 0.37;
 
 		static Options parse(String[] args) {
 			Options options = new Options();
@@ -182,6 +187,11 @@ public class RunMatsim {
 							options.iterations = Integer.parseInt(args[++i]);
 						}
 					}
+					case "--bikingAllowancePerKm" -> {
+						if (i + 1 < args.length) {
+							options.bikingAllowancePerKm = Double.parseDouble(args[++i]);
+						}
+					}
 					default -> {
 						if (arg.startsWith("--config:controler.outputDirectory") && i + 1 < args.length) {
 							options.outputDirectory = args[++i];
@@ -200,14 +210,20 @@ public class RunMatsim {
 
 	private static class MyAdditionalBicycleLinkScore implements AdditionalBicycleLinkScore {
 
+		private final double bikingAllowancePerKm;
+
 		@Inject
 		private AdditionalBicycleLinkScoreDefaultImpl delegate;
+
+		private MyAdditionalBicycleLinkScore(double bikingAllowancePerKm) {
+			this.bikingAllowancePerKm = bikingAllowancePerKm;
+		}
 
 		@Override
 		public double computeLinkBasedScore(Link link, Id<Vehicle> vehicleId, String bicycleMode) {
 			double distance = link.getLength();
 
-			double bikingAllowancePerKm = 0.37;
+//			double bikingAllowancePerKm = 0.37;
 			double bikingAllowance = (distance / 1000.0) * bikingAllowancePerKm;
 
 			double amount = delegate.computeLinkBasedScore(link, vehicleId, bicycleMode);
